@@ -1,61 +1,61 @@
-const User = require('../models/User'); // Importando o User.js da pasta models
+const User = require('../models/User');
 
 // Cria um novo usuário
 exports.createUser = async (req, res) => {
   try {
-    const newUser = new Usuario({
+    const newUser = new User({
       email: req.body.email,
       name: req.body.name,
-      password: req.body.password,
+      password: req.body.password, // Idealmente, você deve adicionar hashing à senha antes de salvá-la
       username: req.body.username
     });
-    const savedUser = await newUser.save();
-    res.status(201).json(savedUser);
+    await newUser.save();
+    res.status(201).send(newUser);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).send(error);
   }
 };
 
-// Recupera todos os usuários
-exports.listUser = async (_req, res) => {
-  try {
-    const users = await Usuario.find();
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-// Recupera um usuário específico pelo ID
-exports.getUserById = async (req, res) => {
+// Busca um usuário pelo ID
+exports.getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    if (!user) res.status(404).json({ message: 'User not found' });
-    res.status(200).json(usuario);
+    if (!user) {
+      return res.status(404).send({ message: 'Usuário não encontrado' });
+    }
+    res.status(200).send(user);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).send(error);
   }
 };
 
-// Atualiza um usuário
+// Atualiza um usuário pelo ID
 exports.updateUser = async (req, res) => {
   try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.status(200).json(updatedUser);
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+      email: req.body.email,
+      name: req.body.name,
+      password: req.body.password, // Novamente, considere a segurança da senha
+      username: req.body.username
+    }, { new: true });
+    if (!updatedUser) {
+      return res.status(404).send({ message: 'Usuário não encontrado para atualização' });
+    }
+    res.status(200).send(updatedUser);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).send(error);
   }
 };
 
-// Deleta um usuário
+// Deleta um usuário pelo ID
 exports.deleteUser = async (req, res) => {
   try {
     const deletedUser = await User.findByIdAndDelete(req.params.id);
-    if (!deletedUser) res.status(404).json({ message: 'User not found' });
-    res.status(200).json({ message: 'User deleted' });
+    if (!deletedUser) {
+      return res.status(404).send({ message: 'Usuário não encontrado para exclusão' });
+    }
+    res.status(204).send(); // Nenhum conteúdo para retornar, mas indica sucesso
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).send(error);
   }
 };
-
-module.exports = exports;
