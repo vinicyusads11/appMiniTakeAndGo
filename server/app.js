@@ -8,25 +8,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rotas
-const productRoutes = require('./routes/productRoutes');
-const userRoutes = require('./routes/userRoutes');
-const bagItemRoutes = require('./routes/bagItemRoutes');
-const bagRoutes = require('./routes/bagRoutes');
-const branchRoutes = require('./routes/branchRoutes');
-const categoryRoutes = require('./routes/categoryRoutes');
-const orderItemRoutes = require('./routes/categoryRoutes');
-const orderRoutes = require('./routes/orderRoutes');
-const stockRoutes = require('./routes/stockRoutes');
+const ProductRoutes = require('./routes/ProductRoutes');
+const UserRoutes = require('./routes/UserRoutes');
+const BagItemRoutes = require('./routes/BagItemRoutes');
+const BagRoutes = require('./routes/BagRoutes');
+const BranchRoutes = require('./routes/BranchRoutes');
+const OrderItemRoutes = require('./routes/OrderItemRoutes');
+const OrderRoutes = require('./routes/OrderRoutes');
+const StockRoutes = require('./routes/StockRoutes');
 
-app.use('/api/products', productRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/bagItem', bagItemRoutes)
-app.use('/api/bag', bagRoutes);
-app.use('/api/branch', branchRoutes);
-app.use('/api/category', categoryRoutes);
-app.use('/api/orderItem', orderItemRoutes);
-app.use('/api/order', orderRoutes);
-app.use('/api/stock', stockRoutes);
+app.use('/api/products', ProductRoutes);
+app.use('/api/users', UserRoutes);
+app.use('/api/bagItem', BagItemRoutes)
+app.use('/api/bag', BagRoutes);
+app.use('/api/branch', BranchRoutes);
+app.use('/api/orderItem', OrderItemRoutes);
+app.use('/api/order', OrderRoutes);
+app.use('/api/stock', StockRoutes);
 
 // ... configure outras rotas
 
