@@ -1,57 +1,61 @@
-const User = require('../models/User');
+const Usuario = require('../database/models/UserSchema');
 
 // Cria um novo usuário
-exports.createUser = async (req, res) => {
+exports.createUsuario = async (req, res) => {
   try {
-    const newUser = new User({
+    const novoUsuario = new Usuario({
       email: req.body.email,
-      name: req.body.name,
-      password: req.body.password, // Idealmente, você deve adicionar hashing à senha antes de salvá-la
-      username: req.body.username
+      idFilial: req.body.idFilial,
+      nome: req.body.nome,
+      senha: req.body.senha, // Considere adicionar hashing à senha antes de salvar
+      telefone: req.body.telefone,
+      tipoUsuario: req.body.tipoUsuario
     });
-    await newUser.save();
-    res.status(201).send(newUser);
+    await novoUsuario.save();
+    res.status(201).send(novoUsuario);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Busca um usuário pelo ID
-exports.getUser = async (req, res) => {
+exports.getUsuario = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    if (!user) {
+    const usuario = await Usuario.findById(req.params.id);
+    if (!usuario) {
       return res.status(404).send({ message: 'Usuário não encontrado' });
     }
-    res.status(200).send(user);
+    res.status(200).send(usuario);
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
 // Atualiza um usuário pelo ID
-exports.updateUser = async (req, res) => {
+exports.updateUsuario = async (req, res) => {
   try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+    const usuarioAtualizado = await Usuario.findByIdAndUpdate(req.params.id, {
       email: req.body.email,
-      name: req.body.name,
-      password: req.body.password, // Novamente, considere a segurança da senha
-      username: req.body.username
+      idFilial: req.body.idFilial,
+      nome: req.body.nome,
+      senha: req.body.senha, // Considere adicionar hashing à senha antes de salvar
+      telefone: req.body.telefone,
+      tipoUsuario: req.body.tipoUsuario
     }, { new: true });
-    if (!updatedUser) {
+    if (!usuarioAtualizado) {
       return res.status(404).send({ message: 'Usuário não encontrado para atualização' });
     }
-    res.status(200).send(updatedUser);
+    res.status(200).send(usuarioAtualizado);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Deleta um usuário pelo ID
-exports.deleteUser = async (req, res) => {
+exports.deleteUsuario = async (req, res) => {
   try {
-    const deletedUser = await User.findByIdAndDelete(req.params.id);
-    if (!deletedUser) {
+    const usuarioDeletado = await Usuario.findByIdAndDelete(req.params.id);
+    if (!usuarioDeletado) {
       return res.status(404).send({ message: 'Usuário não encontrado para exclusão' });
     }
     res.status(204).send(); // Nenhum conteúdo para retornar, mas indica sucesso

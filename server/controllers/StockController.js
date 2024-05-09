@@ -1,63 +1,63 @@
-const Stock = require('../models/Stock');
+const Estoque = require('../database/models/StockSchema');
 
 // Cria um novo registro de estoque
-exports.createStock = async (req, res) => {
+exports.createEstoque = async (req, res) => {
   try {
-    const newStock = new Stock({
-      stockMax: req.body.stockMax,
-      stockMin: req.body.stockMin,
-      idBranch: req.body.idBranch,
-      idProduct: req.body.idProduct,
-      price: req.body.price,
-      quantity: req.body.quantity
+    const novoEstoque = new Estoque({
+      estoqueMax: req.body.estoqueMax,
+      estoqueMin: req.body.estoqueMin,
+      idFilial: req.body.idFilial,
+      idProduto: req.body.idProduto,
+      preco: req.body.preco,
+      quantidade: req.body.quantidade
     });
-    await newStock.save();
-    res.status(201).send(newStock);
+    await novoEstoque.save();
+    res.status(201).send(novoEstoque);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Busca um registro de estoque pelo ID
-exports.getStock = async (req, res) => {
+exports.getEstoque = async (req, res) => {
   try {
-    const stock = await Stock.findById(req.params.id)
-      .populate('idBranch')
-      .populate('idProduct');
-    if (!stock) {
+    const estoque = await Estoque.findById(req.params.id)
+      .populate('idFilial')
+      .populate('idProduto');
+    if (!estoque) {
       return res.status(404).send({ message: 'Estoque não encontrado' });
     }
-    res.status(200).send(stock);
+    res.status(200).send(estoque);
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
 // Atualiza um registro de estoque pelo ID
-exports.updateStock = async (req, res) => {
+exports.updateEstoque = async (req, res) => {
   try {
-    const updatedStock = await Stock.findByIdAndUpdate(req.params.id, {
-      stockMax: req.body.stockMax,
-      stockMin: req.body.stockMin,
-      idBranch: req.body.idBranch,
-      idProduct: req.body.idProduct,
-      price: req.body.price,
-      quantity: req.body.quantity
+    const estoqueAtualizado = await Estoque.findByIdAndUpdate(req.params.id, {
+      estoqueMax: req.body.estoqueMax,
+      estoqueMin: req.body.estoqueMin,
+      idFilial: req.body.idFilial,
+      idProduto: req.body.idProduto,
+      preco: req.body.preco,
+      quantidade: req.body.quantidade
     }, { new: true });
-    if (!updatedStock) {
+    if (!estoqueAtualizado) {
       return res.status(404).send({ message: 'Estoque não encontrado para atualização' });
     }
-    res.status(200).send(updatedStock);
+    res.status(200).send(estoqueAtualizado);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Deleta um registro de estoque pelo ID
-exports.deleteStock = async (req, res) => {
+exports.deleteEstoque = async (req, res) => {
   try {
-    const deletedStock = await Stock.findByIdAndDelete(req.params.id);
-    if (!deletedStock) {
+    const estoqueDeletado = await Estoque.findByIdAndDelete(req.params.id);
+    if (!estoqueDeletado) {
       return res.status(404).send({ message: 'Estoque não encontrado para exclusão' });
     }
     res.status(204).send(); // Nenhum conteúdo para retornar, mas indica sucesso

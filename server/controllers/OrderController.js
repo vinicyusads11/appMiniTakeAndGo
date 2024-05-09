@@ -1,64 +1,66 @@
-const Order = require('../models/Order');
+const Pedido = require('../database/models/OrderSchema');
 
 // Cria um novo pedido
-exports.createOrder = async (req, res) => {
+exports.createPedido = async (req, res) => {
   try {
-    const newOrder = new Order({
-      orderDate: req.body.orderDate,
-      idBag: req.body.idBag,
-      idBranch: req.body.idBranch,
-      idUser: req.body.idUser,
-      orderStatus: req.body.orderStatus,
-      totalValue: req.body.totalValue
+    const novoPedido = new Pedido({
+      dataPedido: req.body.dataPedido,
+      idCesta: req.body.idCesta,
+      idFilial: req.body.idFilial,
+      idUsuario: req.body.idUsuario,
+      itens: req.body.itens,
+      statusPagamento: req.body.statusPagamento,
+      valorTotal: req.body.valorTotal
     });
-    await newOrder.save();
-    res.status(201).send(newOrder);
+    await novoPedido.save();
+    res.status(201).send(novoPedido);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Busca um pedido pelo ID
-exports.getOrder = async (req, res) => {
+exports.getPedido = async (req, res) => {
   try {
-    const order = await Order.findById(req.params.id)
-      .populate('idBag')
-      .populate('idBranch')
-      .populate('idUser');
-    if (!order) {
+    const pedido = await Pedido.findById(req.params.id)
+      .populate('idCesta')
+      .populate('idFilial')
+      .populate('idUsuario');
+    if (!pedido) {
       return res.status(404).send({ message: 'Pedido não encontrado' });
     }
-    res.status(200).send(order);
+    res.status(200).send(pedido);
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
 // Atualiza um pedido pelo ID
-exports.updateOrder = async (req, res) => {
+exports.updatePedido = async (req, res) => {
   try {
-    const updatedOrder = await Order.findByIdAndUpdate(req.params.id, {
-      orderDate: req.body.orderDate,
-      idBag: req.body.idBag,
-      idBranch: req.body.idBranch,
-      idUser: req.body.idUser,
-      orderStatus: req.body.orderStatus,
-      totalValue: req.body.totalValue
+    const pedidoAtualizado = await Pedido.findByIdAndUpdate(req.params.id, {
+      dataPedido: req.body.dataPedido,
+      idCesta: req.body.idCesta,
+      idFilial: req.body.idFilial,
+      idUsuario: req.body.idUsuario,
+      itens: req.body.itens,
+      statusPagamento: req.body.statusPagamento,
+      valorTotal: req.body.valorTotal
     }, { new: true });
-    if (!updatedOrder) {
+    if (!pedidoAtualizado) {
       return res.status(404).send({ message: 'Pedido não encontrado para atualização' });
     }
-    res.status(200).send(updatedOrder);
+    res.status(200).send(pedidoAtualizado);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Deleta um pedido pelo ID
-exports.deleteOrder = async (req, res) => {
+exports.deletePedido = async (req, res) => {
   try {
-    const deletedOrder = await Order.findByIdAndDelete(req.params.id);
-    if (!deletedOrder) {
+    const pedidoDeletado = await Pedido.findByIdAndDelete(req.params.id);
+    if (!pedidoDeletado) {
       return res.status(404).send({ message: 'Pedido não encontrado para exclusão' });
     }
     res.status(204).send(); // Nenhum conteúdo para retornar, mas indica sucesso

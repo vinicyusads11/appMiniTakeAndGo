@@ -1,55 +1,57 @@
-const Product = require('../models/Product');
+const Produto = require('../database/models/ProductSchema');
 
 // Cria um novo produto
-exports.createProduct = async (req, res) => {
+exports.createProduto = async (req, res) => {
   try {
-    const newProduct = new Product({
-      barCode: req.body.barCode,
-      description: req.body.description,
-      imageURL: req.body.imageURL
+    const novoProduto = new Produto({
+      codigoBarras: req.body.codigoBarras,
+      descricao: req.body.descricao,
+      imagemURL: req.body.imagemURL,
+      nome: req.body.nome
     });
-    await newProduct.save();
-    res.status(201).send(newProduct);
+    await novoProduto.save();
+    res.status(201).send(novoProduto);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Busca um produto pelo ID
-exports.getProduct = async (req, res) => {
+exports.getProduto = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
-    if (!product) {
+    const produto = await Produto.findById(req.params.id);
+    if (!produto) {
       return res.status(404).send({ message: 'Produto não encontrado' });
     }
-    res.status(200).send(product);
+    res.status(200).send(produto);
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
 // Atualiza um produto pelo ID
-exports.updateProduct = async (req, res) => {
+exports.updateProduto = async (req, res) => {
   try {
-    const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
-      barCode: req.body.barCode,
-      description: req.body.description,
-      imageURL: req.body.imageURL
+    const produtoAtualizado = await Produto.findByIdAndUpdate(req.params.id, {
+      codigoBarras: req.body.codigoBarras,
+      descricao: req.body.descricao,
+      imagemURL: req.body.imagemURL,
+      nome: req.body.nome
     }, { new: true });
-    if (!updatedProduct) {
+    if (!produtoAtualizado) {
       return res.status(404).send({ message: 'Produto não encontrado para atualização' });
     }
-    res.status(200).send(updatedProduct);
+    res.status(200).send(produtoAtualizado);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Deleta um produto pelo ID
-exports.deleteProduct = async (req, res) => {
+exports.deleteProduto = async (req, res) => {
   try {
-    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
-    if (!deletedProduct) {
+    const produtoDeletado = await Produto.findByIdAndDelete(req.params.id);
+    if (!produtoDeletado) {
       return res.status(404).send({ message: 'Produto não encontrado para exclusão' });
     }
     res.status(204).send(); // Nenhum conteúdo para retornar, mas indica sucesso

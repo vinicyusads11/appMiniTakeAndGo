@@ -1,59 +1,61 @@
-const Bag = require('../models/Bag');
+const Cesta = require('../database/models/BagSchema');
 
 // Cria uma nova cesta
-exports.createBag = async (req, res) => {
+exports.createCesta = async (req, res) => {
   try {
-    const newBag = new Bag({
-      idBranch: req.body.idBranch,
-      idUser: req.body.idUser,
+    const novaCesta = new Cesta({
+      idFilial: req.body.idFilial,
+      idUsuario: req.body.idUsuario,
+      itens: req.body.itens,
       status: req.body.status,
-      totalValue: req.body.totalValue
+      valorTotal: req.body.valorTotal
     });
-    await newBag.save();
-    res.status(201).send(newBag);
+    await novaCesta.save();
+    res.status(201).send(novaCesta);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Busca uma cesta pelo ID
-exports.getBag = async (req, res) => {
+exports.getCesta = async (req, res) => {
   try {
-    const bag = await Bag.findById(req.params.id)
-      .populate('idBranch')
-      .populate('idUser');
-    if (!bag) {
+    const cesta = await Cesta.findById(req.params.id)
+      .populate('idFilial')
+      .populate('idUsuario');
+    if (!cesta) {
       return res.status(404).send({ message: 'Cesta não encontrada' });
     }
-    res.status(200).send(bag);
+    res.status(200).send(cesta);
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
 // Atualiza uma cesta pelo ID
-exports.updateBag = async (req, res) => {
+exports.updateCesta = async (req, res) => {
   try {
-    const updatedBag = await Bag.findByIdAndUpdate(req.params.id, {
-      idBranch: req.body.idBranch,
-      idUser: req.body.idUser,
+    const cestaAtualizada = await Cesta.findByIdAndUpdate(req.params.id, {
+      idFilial: req.body.idFilial,
+      idUsuario: req.body.idUsuario,
+      itens: req.body.itens,
       status: req.body.status,
-      totalValue: req.body.totalValue
+      valorTotal: req.body.valorTotal
     }, { new: true });
-    if (!updatedBag) {
+    if (!cestaAtualizada) {
       return res.status(404).send({ message: 'Cesta não encontrada para atualização' });
     }
-    res.status(200).send(updatedBag);
+    res.status(200).send(cestaAtualizada);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
 // Deleta uma cesta pelo ID
-exports.deleteBag = async (req, res) => {
+exports.deleteCesta = async (req, res) => {
   try {
-    const deletedBag = await Bag.findByIdAndDelete(req.params.id);
-    if (!deletedBag) {
+    const cestaDeletada = await Cesta.findByIdAndDelete(req.params.id);
+    if (!cestaDeletada) {
       return res.status(404).send({ message: 'Cesta não encontrada para exclusão' });
     }
     res.status(204).send(); // Nenhum conteúdo para retornar, mas indica sucesso
