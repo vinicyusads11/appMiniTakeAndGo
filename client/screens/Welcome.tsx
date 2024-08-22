@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     color: Color.colorGray,
   },
   prximo: {
-    left: 293,
+    left: 345,
     top: 751,
     position: "absolute",
   },
