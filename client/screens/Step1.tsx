@@ -1,10 +1,10 @@
-//ESTILIZAR ESTE COMPONENTE
+//ESTILIZAR E RENOMEAR ESTE COMPONENTE
 import * as React from "react";
 import { Text, StyleSheet, Pressable, View } from "react-native";
 import { Image } from "expo-image";
 import { FontFamily, Color, FontSize } from "../GlobalStyles";
 
-const Step = () => {
+const Step1 = () => {
   return (
     <View style={styles.step1}>
       <Text style={styles.aponteACmeraContainer}>
@@ -216,4 +216,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Step;
+export default Step1;
