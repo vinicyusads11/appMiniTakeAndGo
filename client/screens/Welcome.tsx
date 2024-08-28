@@ -1,4 +1,4 @@
-// ESTILIZAR ESTE COMPONENTE
+// TODO: estilizar e renomear este cmponente
 import * as React from "react";
 import { Text, StyleSheet, Pressable, View } from "react-native";
 import { Image } from "expo-image";
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     color: Color.colorGray,
   },
   prximo: {
-    left: 293,
+    left: 345,
     top: 751,
     position: "absolute",
   },
