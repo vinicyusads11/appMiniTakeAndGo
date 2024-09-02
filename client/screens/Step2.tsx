@@ -1,4 +1,4 @@
-// TODO: estilizar e renomear este cmponente
+// TODO: estilizar e renomear este componente
 import * as React from "react";
 import { Image } from "expo-image";
 import { StyleSheet, Text, Pressable, View } from "react-native";
