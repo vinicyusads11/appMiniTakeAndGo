@@ -14,5 +14,13 @@ export const FontFamily = {
 
 /* font sizes */
 export const FontSize = {
+  size_3xs: 10,
   size_xs: 12,
+  size_xl: 20,
+};
+
+/* Paddings */
+export const Padding = {
+  p_xl: 20,
+  p_mini: 15,
 };
