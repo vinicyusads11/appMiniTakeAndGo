@@ -1,11 +1,9 @@
-/* fonts */
 export const FontFamily = {
     poppinsRegular: "Poppins-Regular",
     poppinsSemiBold: "Poppins-SemiBold",
     poppinsMedium: "Poppins-Medium",
     poppinsBold: "Poppins-Bold",
   };
-  /* Colors */
   export const Color = {
     colorGray: "#272626",
     colorWhite: "#fff",
@@ -15,7 +13,6 @@ export const FontFamily = {
     colorDarkslategray: "#494949",
   };
 
-/* font sizes */
 export const FontSize = {
   size_3xs: 10,
   size_xs: 12,
