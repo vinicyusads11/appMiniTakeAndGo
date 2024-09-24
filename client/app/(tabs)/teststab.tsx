@@ -9,7 +9,8 @@ import * as React from "react";
 //import BranchStep from "../../screens/BranchStep";
 //import ScanBranch1 from "../../screens/ScanBranch1";
 //import Home from "../../screens/Home";
-import ScanBarCode from "../../screens/ScanBarCode";
+//import ScanBarCode from "../../screens/ScanBarCode";
+import EmptyBasket from "../../screens/EmptyBasket";
 
 
 
@@ -23,5 +24,6 @@ export default function Index() {
   //return <BranchStep />;
   //return <ScanBranch1 />;
   //return <Home/>;
-  return <ScanBarCode/>;
+  //return <ScanBarCode/>;
+  return <EmptyBasket/>;
 } // Renderiza o componente 
