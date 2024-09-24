@@ -6,7 +6,8 @@ import * as React from "react";
 //import Step3 from "../../screens/Step3";
 //import RegisterScreen from "../../screens/RegisterScreen";
 //import LoginScreen from "../../screens/LoginScreen";
-import BranchStep from "../../screens/BranchStep";
+//import BranchStep from "../../screens/BranchStep";
+import ScanBranch1 from "../../screens/ScanBranch1";
 
 export default function Index() {
   //return <Welcome />;
@@ -15,5 +16,6 @@ export default function Index() {
   //return <Step3 />;
   //return <RegisterScreen/>;
   //return <LoginScreen />;
-  return <BranchStep />;
+  //return <BranchStep />;
+  return <ScanBranch1 />;
 } // Renderiza o componente 
