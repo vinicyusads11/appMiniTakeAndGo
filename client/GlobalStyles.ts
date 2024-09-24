@@ -15,6 +15,8 @@ export const FontFamily = {
     colorDarkslategray_100: "#494949",
     second: "#3b3b3b",
     colorWhitesmoke: "#f8f8f8",
+    colorDarkslategray_200: "#363636",
+    colorDarkgray: "#b1b1b1",
   };
 
 export const FontSize = {
@@ -25,6 +27,8 @@ export const FontSize = {
   size_sm: 14,
   size_smi: 13,
   size_2xs: 11,
+  size_lgi: 19,
+  size_lg: 18,
 };
 
 export const Padding = {
@@ -37,4 +41,6 @@ export const Border = {
   br_xs: 12,
   br_10xs: 3,
   br_3xs: 10,
+  br_8xs: 5,
+  br_base: 16,
 };
