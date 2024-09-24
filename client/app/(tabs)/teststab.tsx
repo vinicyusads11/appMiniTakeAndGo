@@ -10,7 +10,8 @@ import * as React from "react";
 //import ScanBranch1 from "../../screens/ScanBranch1";
 //import Home from "../../screens/Home";
 //import ScanBarCode from "../../screens/ScanBarCode";
-import EmptyBasket from "../../screens/EmptyBasket";
+//import EmptyBasket from "../../screens/EmptyBasket";
+import Payment from "../../screens/Payment";
 
 
 
@@ -25,5 +26,9 @@ export default function Index() {
   //return <ScanBranch1 />;
   //return <Home/>;
   //return <ScanBarCode/>;
-  return <EmptyBasket/>;
-} // Renderiza o componente 
+  //return <EmptyBasket/>;
+  return <Payment/>;
+  
+} 
+
+// Renderiza o componente 
