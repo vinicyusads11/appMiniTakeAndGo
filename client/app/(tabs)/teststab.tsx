@@ -12,7 +12,8 @@ import * as React from "react";
 //import ScanBarCode from "../../screens/ScanBarCode";
 //import EmptyBasket from "../../screens/EmptyBasket";
 //import Payment from "../../screens/Payment";
-import OrderCompleted from "../../screens/OrderCompleted";
+//import OrderCompleted from "../../screens/OrderCompleted";
+import OrderInfo from "../../screens/OrderInfo";
 
 
 
@@ -29,7 +30,8 @@ export default function Index() {
   //return <ScanBarCode/>;
   //return <EmptyBasket/>;
   //return <Payment/>;
-  return <OrderCompleted/>;
+  //return <OrderCompleted/>;
+  return <OrderInfo/>;
 } 
 
 // Renderiza o componente 
