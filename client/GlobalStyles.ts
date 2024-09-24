@@ -1,5 +1,6 @@
 export const FontFamily = {
     poppinsRegular: "Poppins-Regular",
+    poppinsLight: "Poppins-Light",
     poppinsSemiBold: "Poppins-SemiBold",
     poppinsMedium: "Poppins-Medium",
     poppinsBold: "Poppins-Bold",
@@ -11,6 +12,9 @@ export const FontFamily = {
     colorBlack: "#000",
     colorDimgray: "#626262",
     colorDarkslategray: "#494949",
+    colorDarkslategray_100: "#494949",
+    second: "#3b3b3b",
+    colorWhitesmoke: "#f8f8f8",
   };
 
 export const FontSize = {
@@ -20,6 +24,7 @@ export const FontSize = {
   size_base: 16,
   size_sm: 14,
   size_smi: 13,
+  size_2xs: 11,
 };
 
 export const Padding = {
@@ -31,4 +36,5 @@ export const Padding = {
 export const Border = {
   br_xs: 12,
   br_10xs: 3,
+  br_3xs: 10,
 };
