@@ -11,7 +11,8 @@ import * as React from "react";
 //import Home from "../../screens/Home";
 //import ScanBarCode from "../../screens/ScanBarCode";
 //import EmptyBasket from "../../screens/EmptyBasket";
-import Payment from "../../screens/Payment";
+//import Payment from "../../screens/Payment";
+import OrderCompleted from "../../screens/OrderCompleted";
 
 
 
@@ -27,8 +28,8 @@ export default function Index() {
   //return <Home/>;
   //return <ScanBarCode/>;
   //return <EmptyBasket/>;
-  return <Payment/>;
-  
+  //return <Payment/>;
+  return <OrderCompleted/>;
 } 
 
 // Renderiza o componente 
