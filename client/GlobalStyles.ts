@@ -4,6 +4,7 @@ export const FontFamily = {
     poppinsSemiBold: "Poppins-SemiBold",
     poppinsMedium: "Poppins-Medium",
     poppinsBold: "Poppins-Bold",
+    poppinsExtraBold: "Poppins-ExtraBold",
   };
   export const Color = {
     colorGray: "#272626",
@@ -17,6 +18,8 @@ export const FontFamily = {
     colorWhitesmoke: "#f8f8f8",
     colorDarkslategray_200: "#363636",
     colorDarkgray: "#b1b1b1",
+    ffffff: "#111719",
+    subColor: "#9796a1",
   };
 
 export const FontSize = {
