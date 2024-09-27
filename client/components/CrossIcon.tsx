@@ -1,19 +1,19 @@
-import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet } from "react-native";
+import * as React from 'react';
+import { Image } from 'expo-image';
+import { StyleSheet } from 'react-native';
 
 const CrossIcon = () => {
   return (
     <Image
       style={styles.CrossIcon}
       contentFit="cover"
-      source={require("../assets/pictures/crossblue")}
+      source={require('../assets/pictures/crossblue')}
     />
   );
 };
 
 const styles = StyleSheet.create({
-    CrossIcon: {
+  CrossIcon: {
     width: 24,
     height: 24,
   },
