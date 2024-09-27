@@ -1,8 +1,8 @@
 // TODO: estilizar e renomear este componente
-import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { Padding, Color, Border, FontFamily, FontSize } from "../GlobalStyles";
+import * as React from 'react';
+import { Text, StyleSheet, View, Pressable } from 'react-native';
+import { Image } from 'expo-image';
+import { Padding, Color, Border, FontFamily, FontSize } from '../GlobalStyles';
 
 const Register = () => {
   return (
@@ -15,20 +15,15 @@ const Register = () => {
       </View>
       <View style={styles.inputWrapper}>
         <View style={[styles.input2, styles.inputPosition]}>
-          <Text style={styles.placeholder}>
-            Crie uma senha de no mínimo 8 caracteres
-          </Text>
+          <Text style={styles.placeholder}>Crie uma senha de no mínimo 8 caracteres</Text>
         </View>
       </View>
       <Image
         style={[styles.groupIcon, styles.groupIconLayout]}
         contentFit="cover"
-        source={require("../assets/eyeicon.png")}
+        source={require('../assets/eyeicon.png')}
       />
-      <Pressable
-        style={[styles.button, styles.buttonLayout]}
-        onPress={() => {}}
-      >
+      <Pressable style={[styles.button, styles.buttonLayout]} onPress={() => {}}>
         <Text style={[styles.button1, styles.comTypo]}>Criar conta</Text>
       </Pressable>
       <Text style={[styles.ouEntreCom, styles.comTypo]}>Ou entre com</Text>
@@ -41,16 +36,14 @@ const Register = () => {
       <Image
         style={[styles.registerChild, styles.buttonLayout]}
         contentFit="cover"
-        source={require("../assets/rectangle-2.png")}
+        source={require('../assets/rectangle-2.png')}
       />
       <Image
         style={styles.image7Icon}
         contentFit="cover"
-        source={require("../assets/google.png")}
+        source={require('../assets/google.png')}
       />
-      <Text style={[styles.continuarComGoogle, styles.comTypo]}>
-        Continuar com google
-      </Text>
+      <Text style={[styles.continuarComGoogle, styles.comTypo]}>Continuar com google</Text>
       <Text style={[styles.qualOSeu, styles.qualClr]}>Qual o seu nome?</Text>
       <Text style={[styles.qualOSeu1, styles.qualClr]}>Qual o seu email?</Text>
       <Text style={[styles.crieUmaSenha, styles.qualClr]}>Crie uma senha</Text>
@@ -60,20 +53,16 @@ const Register = () => {
       <Image
         style={[styles.groupIcon1, styles.groupIconLayout]}
         contentFit="cover"
-        source={require("../assets/eyeicon.png")}
+        source={require('../assets/eyeicon.png')}
       />
-      <Text style={[styles.confirmarSenha, styles.qualClr]}>
-        Confirmar senha
-      </Text>
+      <Text style={[styles.confirmarSenha, styles.qualClr]}>Confirmar senha</Text>
       <View style={[styles.registerItem, styles.registerPosition]} />
       <Image
         style={[styles.registerInner, styles.registerPosition]}
         contentFit="cover"
-        source={require("../assets/line-9.png")}
+        source={require('../assets/line-9.png')}
       />
-      <Text
-        style={[styles.crieUmaConta, styles.qualClr]}
-      >{`Crie uma conta  `}</Text>
+      <Text style={[styles.crieUmaConta, styles.qualClr]}>{`Crie uma conta  `}</Text>
     </View>
   );
 };
@@ -87,46 +76,46 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Color.colorDeepskyblue,
     borderRadius: Border.br_10xs,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
     height: 40,
     width: 317,
-    borderStyle: "solid",
-    position: "absolute",
+    borderStyle: 'solid',
+    position: 'absolute',
     backgroundColor: Color.colorWhite,
   },
   groupIconLayout: {
-    maxWidth: "100%",
-    width: "4.89%",
-    height: "1.51%",
-    maxHeight: "100%",
-    position: "absolute",
-    overflow: "hidden",
+    maxWidth: '100%',
+    width: '4.89%',
+    height: '1.51%',
+    maxHeight: '100%',
+    position: 'absolute',
+    overflow: 'hidden',
   },
   buttonLayout: {
     borderRadius: Border.br_xs,
     width: 317,
-    position: "absolute",
+    position: 'absolute',
   },
   comTypo: {
     fontFamily: FontFamily.poppinsSemiBold,
-    fontWeight: "600",
-    textAlign: "center",
+    fontWeight: '600',
+    textAlign: 'center',
   },
   qualClr: {
     color: Color.colorBlack,
-    textAlign: "center",
-    position: "absolute",
+    textAlign: 'center',
+    position: 'absolute',
   },
   registerPosition: {
     top: 560,
-    position: "absolute",
+    position: 'absolute',
   },
   placeholder: {
-    fontWeight: "500",
+    fontWeight: '500',
     fontFamily: FontFamily.poppinsMedium,
     color: Color.colorDimgray,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: FontSize.size_3xs,
   },
   input: {
@@ -146,14 +135,14 @@ const styles = StyleSheet.create({
     height: 40,
     width: 317,
     left: 22,
-    position: "absolute",
+    position: 'absolute',
   },
   groupIcon: {
-    top: "39.88%",
-    right: "7.89%",
-    bottom: "58.61%",
-    left: "70.22%",
-    maxHeight: "100%",
+    top: '39.88%',
+    right: '7.89%',
+    bottom: '58.61%',
+    left: '70.22%',
+    maxHeight: '100%',
   },
   button1: {
     color: Color.colorWhite,
@@ -163,12 +152,12 @@ const styles = StyleSheet.create({
     marginLeft: -158,
     top: 482,
     backgroundColor: Color.colorDeepskyblue,
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingHorizontal: Padding.p_xl,
     paddingVertical: 15,
-    left: "50%",
-    alignItems: "center",
-    flexDirection: "row",
+    left: '50%',
+    alignItems: 'center',
+    flexDirection: 'row',
     borderRadius: Border.br_xs,
     height: 40,
   },
@@ -177,8 +166,8 @@ const styles = StyleSheet.create({
     top: 553,
     fontSize: 9,
     color: Color.colorDarkslategray,
-    left: "50%",
-    position: "absolute",
+    left: '50%',
+    position: 'absolute',
   },
   jTemConta: {
     color: Color.colorDarkslategray,
@@ -190,12 +179,12 @@ const styles = StyleSheet.create({
     marginLeft: -62,
     fontSize: 12,
     fontFamily: FontFamily.poppinsRegular,
-    textAlign: "center",
+    textAlign: 'center',
   },
   jTemContaContainer: {
     top: 689,
-    left: "50%",
-    position: "absolute",
+    left: '50%',
+    position: 'absolute',
   },
   registerChild: {
     top: 597,
@@ -207,7 +196,7 @@ const styles = StyleSheet.create({
     left: 60,
     width: 20,
     height: 20,
-    position: "absolute",
+    position: 'absolute',
   },
   continuarComGoogle: {
     top: 607,
@@ -215,8 +204,8 @@ const styles = StyleSheet.create({
     color: Color.colorDarkslategray,
     fontSize: FontSize.size_3xs,
     fontFamily: FontFamily.poppinsSemiBold,
-    fontWeight: "600",
-    position: "absolute",
+    fontWeight: '600',
+    position: 'absolute',
   },
   qualOSeu: {
     top: 121,
@@ -244,11 +233,11 @@ const styles = StyleSheet.create({
     left: 22,
   },
   groupIcon1: {
-    top: "50.25%",
-    right: "8.72%",
-    bottom: "48.24%",
-    left: "86.39%",
-    maxHeight: "100%",
+    top: '50.25%',
+    right: '8.72%',
+    bottom: '48.24%',
+    left: '86.39%',
+    maxHeight: '100%',
   },
   confirmarSenha: {
     top: 362,
@@ -259,32 +248,32 @@ const styles = StyleSheet.create({
   },
   registerItem: {
     left: 26,
-    borderColor: "#b1b1b1",
+    borderColor: '#b1b1b1',
     borderTopWidth: 1,
     width: 97,
     height: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     top: 560,
   },
   registerInner: {
     left: 237,
     width: 96,
-    maxHeight: "100%",
+    maxHeight: '100%',
   },
   crieUmaConta: {
     marginLeft: -135,
     top: 44,
-    fontWeight: "700",
+    fontWeight: '700',
     fontFamily: FontFamily.poppinsBold,
     width: 269,
     fontSize: FontSize.size_base,
-    left: "50%",
+    left: '50%',
   },
   register: {
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 800,
-    overflow: "hidden",
+    overflow: 'hidden',
     backgroundColor: Color.colorWhite,
   },
 });

@@ -1,35 +1,34 @@
-import { StyleSheet } from "react-native";
-import { Color, FontSize, FontFamily, Border } from "../GlobalStyles";
-import { Redirect } from "expo-router";
+import { StyleSheet } from 'react-native';
+import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
+import { Redirect } from 'expo-router';
 
 const styles = StyleSheet.create({
-
   basket: {
     backgroundColor: Color.colorWhite,
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 800,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
 
   totalClr: {
     color: Color.colorBlack,
-    textAlign: "left",
+    textAlign: 'left',
   },
 
   buttonFlexBox: {
-    alignItems: "center",
-    position: "absolute",
+    alignItems: 'center',
+    position: 'absolute',
   },
 
   esvaziarCestaTypo: {
     fontSize: FontSize.size_xs,
     top: 453,
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    left: "50%",
-    position: "absolute",
+    fontWeight: '700',
+    left: '50%',
+    position: 'absolute',
   },
 
   todasAsDivsCinzasProdutos: {
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.colorWhitesmoke,
     borderRadius: Border.br_base,
     left: 12,
-    position: "absolute",
+    position: 'absolute',
   },
 
   nomeDosProdutos: {
@@ -46,22 +45,22 @@ const styles = StyleSheet.create({
     color: Color.colorDarkslategray_100,
     letterSpacing: 0.4,
     fontFamily: FontFamily.poppinsMedium,
-    fontWeight: "500",
+    fontWeight: '500',
     left: 104,
     fontSize: FontSize.size_xs,
-    textAlign: "left",
-    position: "absolute",
+    textAlign: 'left',
+    position: 'absolute',
   },
 
   r697Typo: {
     lineHeight: 25,
     fontSize: FontSize.size_lgi,
     fontFamily: FontFamily.poppinsMedium,
-    fontWeight: "500",
+    fontWeight: '500',
     left: 104,
     color: Color.colorBlack,
-    textAlign: "left",
-    position: "absolute",
+    textAlign: 'left',
+    position: 'absolute',
   },
 
   lata350mlTypo: {
@@ -69,10 +68,10 @@ const styles = StyleSheet.create({
     letterSpacing: 0.3,
     fontSize: FontSize.size_3xs,
     fontFamily: FontFamily.poppinsMedium,
-    fontWeight: "500",
+    fontWeight: '500',
     left: 104,
-    textAlign: "left",
-    position: "absolute",
+    textAlign: 'left',
+    position: 'absolute',
   },
 
   basketChildLayout2: {
@@ -80,7 +79,7 @@ const styles = StyleSheet.create({
     left: 266,
     height: 25,
     borderRadius: Border.br_8xs,
-    position: "absolute",
+    position: 'absolute',
     backgroundColor: Color.colorWhite,
   },
 
@@ -88,14 +87,14 @@ const styles = StyleSheet.create({
     height: 10,
     width: 10,
     left: 315,
-    position: "absolute",
+    position: 'absolute',
   },
 
   basketChildLayout: {
     height: 0,
     left: 273,
     width: 12,
-    position: "absolute",
+    position: 'absolute',
   },
 
   textTypo: {
@@ -104,22 +103,22 @@ const styles = StyleSheet.create({
     letterSpacing: 0.3,
     fontSize: FontSize.size_3xs,
     fontFamily: FontFamily.poppinsMedium,
-    fontWeight: "500",
-    textAlign: "left",
-    position: "absolute",
+    fontWeight: '500',
+    textAlign: 'left',
+    position: 'absolute',
   },
 
   iconLayout: {
     height: 61,
     width: 61,
     left: 28,
-    position: "absolute",
+    position: 'absolute',
   },
 
   basketChild: {
     bottom: 713,
     left: 0,
-    backgroundColor: "#272626",
+    backgroundColor: '#272626',
     borderColor: Color.colorDeepskyblue,
     borderWidth: 1,
     width: 360,
@@ -131,7 +130,7 @@ const styles = StyleSheet.create({
     left: 26,
     height: 20,
     width: 12,
-    position: "absolute",
+    position: 'absolute',
   },
 
   cesta: {
@@ -139,8 +138,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: Color.colorWhite,
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    position: "absolute",
+    fontWeight: '700',
+    position: 'absolute',
   },
 
   total: {
@@ -149,8 +148,8 @@ const styles = StyleSheet.create({
     top: 630,
     color: Color.colorBlack,
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    position: "absolute",
+    fontWeight: '700',
+    position: 'absolute',
     left: 23,
   },
 
@@ -161,14 +160,14 @@ const styles = StyleSheet.create({
     top: 630,
     color: Color.colorBlack,
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    position: "absolute",
+    fontWeight: '700',
+    position: 'absolute',
   },
 
   button1: {
-    fontWeight: "600",
+    fontWeight: '600',
     fontFamily: FontFamily.poppinsSemiBold,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: FontSize.size_base,
     color: Color.colorWhite,
   },
@@ -176,7 +175,7 @@ const styles = StyleSheet.create({
   button: {
     marginLeft: -83,
     top: 678,
-    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
     shadowOffset: {
       width: 0,
       height: 4,
@@ -188,11 +187,11 @@ const styles = StyleSheet.create({
     backgroundColor: Color.colorDeepskyblue,
     width: 166,
     height: 40,
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
     paddingHorizontal: 20,
     paddingVertical: 15,
-    left: "50%",
+    left: '50%',
   },
 
   basketInner: {
@@ -202,7 +201,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     width: 171,
     height: 1,
-    left: "50%",
+    left: '50%',
   },
 
   adicionarMaisItens: {
@@ -214,10 +213,10 @@ const styles = StyleSheet.create({
     top: 147,
     left: 352,
     borderRadius: 100,
-    backgroundColor: "#707070",
+    backgroundColor: '#707070',
     width: 8,
     height: 127,
-    position: "absolute",
+    position: 'absolute',
   },
 
   formaDePagamento: {
@@ -226,43 +225,43 @@ const styles = StyleSheet.create({
 
   pix: {
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    fontWeight: '700',
   },
 
   formaDePagamentoContainer1: {
-    width: "100%",
+    width: '100%',
   },
 
   nomeFormaDePagamentoPIX: {
     top: 593,
     fontSize: 14,
     letterSpacing: -0.4,
-    display: "flex",
+    display: 'flex',
     width: 244,
     color: Color.colorBlack,
-    textAlign: "left",
+    textAlign: 'left',
     left: 23,
   },
 
   imagemPIX: {
-    top: "73.3%",
-    right: "37.78%",
-    bottom: "23%",
-    left: "55.56%",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    position: "absolute",
-    overflow: "hidden",
+    top: '73.3%',
+    right: '37.78%',
+    bottom: '23%',
+    left: '55.56%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    position: 'absolute',
+    overflow: 'hidden',
   },
 
   botaoVermelhoEsvaziarCesta: {
     left: 239,
-    backgroundColor: "#ff0000",
+    backgroundColor: '#ff0000',
     width: 114,
     height: 18,
     borderRadius: Border.br_8xs,
     top: 453,
-    position: "absolute",
+    position: 'absolute',
   },
 
   nomeEsvaziarCesta: {
@@ -279,11 +278,10 @@ const styles = StyleSheet.create({
     top: 297,
   },
 
+  // Parte Organizada:
 
-// Parte Organizada:
+  // ESTILIZAÇÃO DA DIV DO CUP NOODLES GALINHA CAIPIRA
 
-// ESTILIZAÇÃO DA DIV DO CUP NOODLES GALINHA CAIPIRA
-  
   divCinzaCupNoodles: {
     top: 239,
   },
@@ -317,8 +315,7 @@ const styles = StyleSheet.create({
     top: 293,
   },
 
-// ESTILIZAÇÃO DA DIV DO CHOCOLATE SNICKERS
-
+  // ESTILIZAÇÃO DA DIV DO CHOCOLATE SNICKERS
 
   divCinzaChocolateSnickers: {
     top: 341,
@@ -329,7 +326,7 @@ const styles = StyleSheet.create({
     left: 24,
     width: 70,
     height: 47,
-    position: "absolute",
+    position: 'absolute',
   },
 
   descricaoChocolateSnickers: {
@@ -337,8 +334,8 @@ const styles = StyleSheet.create({
     left: 104,
     width: 150,
     height: 20,
-    textAlign: "left",
-    position: "absolute",
+    textAlign: 'left',
+    position: 'absolute',
   },
 
   nomeChocolateSnickers: {
@@ -350,7 +347,7 @@ const styles = StyleSheet.create({
     top: 385,
     lineHeight: 21,
     left: 105,
-    fontWeight: "500",
+    fontWeight: '500',
   },
 
   fundoAlterarQuantidadeSnickers: {
@@ -365,7 +362,7 @@ const styles = StyleSheet.create({
     top: 395,
   },
 
-// ESTILIZAÇÃO DA DIV DO ENERGETICO MONSTER
+  // ESTILIZAÇÃO DA DIV DO ENERGETICO MONSTER
 
   divCinzaEnergeticoMonster: {
     top: 138,
@@ -376,7 +373,7 @@ const styles = StyleSheet.create({
     left: 28,
     width: 61,
     height: 61,
-    position: "absolute",
+    position: 'absolute',
   },
 
   descricaoEnergeticoMonster: {

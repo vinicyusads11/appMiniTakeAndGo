@@ -1,15 +1,13 @@
 // TODO: estilizar e renomear este componente
-import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
-import { Image } from "expo-image";
-import { FontFamily, FontSize, Color } from "../GlobalStyles";
+import * as React from 'react';
+import { Text, StyleSheet, View } from 'react-native';
+import { Image } from 'expo-image';
+import { FontFamily, FontSize, Color } from '../GlobalStyles';
 
 const BranchStep = () => {
   return (
     <View style={styles.branchstep}>
-      <Text style={[styles.identifiqueAFilial, styles.filialFlexBox]}>
-        Identifique a filial
-      </Text>
+      <Text style={[styles.identifiqueAFilial, styles.filialFlexBox]}>Identifique a filial</Text>
       <View style={styles.branchstepChild} />
       <Text style={[styles.acessarFilialVia, styles.umCdigoqrCodeTypo]}>
         Acessar filial via QR Code
@@ -17,25 +15,18 @@ const BranchStep = () => {
       <Image
         style={styles.branchstepItem}
         contentFit="cover"
-        source={require("../assets/qrcodeicon.png")}
+        source={require('../assets/qrcodeicon.png')}
       />
       <Text
         style={[styles.umCdigoqrCode, styles.containerFlexBox]}
       >{`Pronto! Sua conta já foi criada. `}</Text>
-      <Text
-        style={[
-          styles.agoraPrecisamosIdentificarContainer,
-          styles.containerFlexBox,
-        ]}
-      >
+      <Text style={[styles.agoraPrecisamosIdentificarContainer, styles.containerFlexBox]}>
         <Text style={styles.agoraPrecisamosIdentificarE}>
           <Text
             style={[styles.agoraPrecisamosIdentificar, styles.textTypo]}
           >{`Agora precisamos identificar em qual filial da `}</Text>
           <Text style={[styles.mini, styles.miniTypo]}>MINI</Text>
-          <Text
-            style={[styles.agoraPrecisamosIdentificar, styles.textTypo]}
-          >{` você está! 
+          <Text style={[styles.agoraPrecisamosIdentificar, styles.textTypo]}>{` você está! 
 `}</Text>
         </Text>
         <Text style={[styles.agoraPrecisamosIdentificar, styles.textTypo]}>
@@ -45,21 +36,19 @@ const BranchStep = () => {
       <Image
         style={styles.image5Icon}
         contentFit="cover"
-        source={require("../assets/logominiredondafundopreto.png")}
+        source={require('../assets/logominiredondafundopreto.png')}
       />
       <Text style={[styles.porFavorAponteContainer, styles.containerFlexBox]}>
         <Text style={styles.porFavorAponteSuaCmeraE}>
-          <Text style={styles.porFavorAponte}>
-            Por favor, aponte sua câmera e escaneie o
-          </Text>
+          <Text style={styles.porFavorAponte}>Por favor, aponte sua câmera e escaneie o</Text>
           <Text style={styles.textTypo}>{` `}</Text>
         </Text>
         <Text style={[styles.mini, styles.miniTypo]}>QR CODE</Text>
         <Text style={styles.porFavorAponteSuaCmeraE}>
           <Text style={styles.textTypo}>{` `}</Text>
           <Text style={styles.porFavorAponte}>
-            na entrada do mercado onde pretende fazer suas compras, para que
-            possamos identificar a filial.
+            na entrada do mercado onde pretende fazer suas compras, para que possamos identificar a
+            filial.
           </Text>
         </Text>
       </Text>
@@ -69,28 +58,28 @@ const BranchStep = () => {
 
 const styles = StyleSheet.create({
   filialFlexBox: {
-    textAlign: "left",
+    textAlign: 'left',
     letterSpacing: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   umCdigoqrCodeTypo: {
     fontFamily: FontFamily.poppinsSemiBold,
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: FontSize.size_sm,
     color: Color.colorGray,
-    left: "50%",
+    left: '50%',
   },
   containerFlexBox: {
-    textAlign: "center",
-    position: "absolute",
+    textAlign: 'center',
+    position: 'absolute',
   },
   textTypo: {
     fontFamily: FontFamily.poppinsMedium,
-    fontWeight: "500",
+    fontWeight: '500',
   },
   miniTypo: {
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    fontWeight: '700',
   },
   identifiqueAFilial: {
     marginLeft: -69,
@@ -98,36 +87,36 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: Color.colorGray,
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    left: "50%",
+    fontWeight: '700',
+    left: '50%',
   },
   branchstepChild: {
     marginLeft: -110,
     top: 670,
     borderRadius: 12,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorDeepskyblue,
     borderWidth: 1,
     width: 219,
     height: 32,
-    left: "50%",
-    position: "absolute",
+    left: '50%',
+    position: 'absolute',
     backgroundColor: Color.colorWhite,
   },
   acessarFilialVia: {
     marginLeft: -100,
     top: 676,
     width: 175,
-    textAlign: "left",
+    textAlign: 'left',
     letterSpacing: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   branchstepItem: {
     top: 671,
     left: 275,
     width: 30,
     height: 30,
-    position: "absolute",
+    position: 'absolute',
   },
   umCdigoqrCode: {
     marginLeft: -112,
@@ -135,10 +124,10 @@ const styles = StyleSheet.create({
     width: 224,
     height: 18,
     fontFamily: FontFamily.poppinsSemiBold,
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: FontSize.size_sm,
     color: Color.colorGray,
-    left: "50%",
+    left: '50%',
   },
   agoraPrecisamosIdentificar: {
     color: Color.colorGray,
@@ -164,8 +153,8 @@ const styles = StyleSheet.create({
     borderRadius: 500,
     width: 198,
     height: 198,
-    left: "50%",
-    position: "absolute",
+    left: '50%',
+    position: 'absolute',
   },
   porFavorAponte: {
     fontFamily: FontFamily.poppinsRegular,
@@ -179,13 +168,13 @@ const styles = StyleSheet.create({
     width: 211,
     height: 62,
     fontSize: FontSize.size_3xs,
-    left: "50%",
+    left: '50%',
   },
   branchstep: {
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 800,
-    overflow: "hidden",
+    overflow: 'hidden',
     backgroundColor: Color.colorWhite,
   },
 });
