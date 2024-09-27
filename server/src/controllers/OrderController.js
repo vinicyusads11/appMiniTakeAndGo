@@ -1,4 +1,4 @@
-const Pedido = require('../database/models/OrderSchema');
+const Pedido = require('../src/database/models/OrderSchema');
 
 // Cria um novo pedido
 exports.createPedido = async (req, res) => {
