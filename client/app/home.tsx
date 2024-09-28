@@ -125,7 +125,7 @@ const Home = () => {
         Cup Noodles
       </Text>
 
-      <Text style={ [styles.restante61, styles.restanteTypo1] }>
+      <Text style={ [styles.textoRestante6, styles.restanteTypo1] }>
         Restante: 6
       </Text>
 
@@ -227,7 +227,7 @@ const Home = () => {
         R$ 11,59
       </Text>
 
-      <Text style={ [styles.restaurantName5, styles.restaurantTypo] }>
+      <Text style={ [styles.textoLata437ML, styles.restaurantTypo] }>
         Lata 473ml
       </Text>
 
@@ -262,7 +262,7 @@ const Home = () => {
       />
 
       <Image
-        style={ styles.icon } 
+        style={ styles.fotoIconeLupa } 
         contentFit="cover" 
         source={ require('../assets/searchicon.png') } 
       />

@@ -170,12 +170,10 @@ const styles = StyleSheet.create({
   },
 
   restante6: {
-    left: 120,
+    left: 1,
     color: Color.colorBlack,
     letterSpacing: 1,
-    fontSize: FontSize.size_3xs,
     top: 750,
-    textAlign: 'left',
     fontFamily: FontFamily.poppinsRegular,
   },
 
@@ -335,8 +333,8 @@ const styles = StyleSheet.create({
     left: 75,
   },
 
-  restante61: {
-    left: 105,
+  textoRestante6: {
+    left: 120,
   },
 
   price2: {
@@ -454,7 +452,7 @@ const styles = StyleSheet.create({
     marginTop: 93,
   },
 
-  restaurantName5: {
+  textoLata437ML: {
     width: '18.89%',
     left: '66.11%',
   },
@@ -483,8 +481,7 @@ const styles = StyleSheet.create({
   },
   
   image3Icon: {
-    marginLeft: -173,
-    top: 3,
+    marginLeft: -200,
     width: 138,
     height: 150,
     left: '50%',
@@ -501,7 +498,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 
-  icon: {
+  fotoIconeLupa: {
     height: '2.1%',
     width: '4.67%',
     top: '28.88%',
@@ -509,9 +506,7 @@ const styles = StyleSheet.create({
     bottom: '69.03%',
     left: '12.5%',
     maxWidth: '100%',
-    maxHeight: '100%',
     position: 'absolute',
-    overflow: 'hidden',
   },
 
   buscarPorProduto: {
