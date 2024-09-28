@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
+
   image14IconPosition: {
     left: '50%',
     position: 'absolute',
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
     height: 800,
     overflow: 'hidden',
   },
+
 });
 
 export default styles;
