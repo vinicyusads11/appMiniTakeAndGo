@@ -116,7 +116,7 @@ const Home = () => {
       />
 
       <Image
-        style={ [styles.image52Icon, styles.iconLayout] }
+        style={ [styles.fotoCupNoodles, styles.iconLayout] }
         contentFit="cover"
         source={ require('../assets/image-52.png') }
       />
@@ -146,7 +146,7 @@ const Home = () => {
       </Text>
 
       <Text style={ [styles.salgadinhoDoritos, styles.poViscontiTypo] }>
-        Salgadinho Doritos
+        Salgadinho DORITOS
       </Text>
 
       <Text style={ styles.restaurantName2 }>
@@ -160,7 +160,7 @@ const Home = () => {
       />
 
       <Image
-        style={ [styles.image58Icon, styles.iconPosition] }
+        style={ [styles.fotoChocolateSnickers, styles.iconPosition] }
         contentFit="cover"
         source={ require('../assets/image-58.png') }
       />
@@ -188,7 +188,7 @@ const Home = () => {
       />
 
       <Text style={ [styles.cervejaHeineken, styles.cervejaHeinekenTypo] }>
-        Cerveja Heineken
+        Cerveja HEINEKEN
       </Text>
 
       <Text style={ [styles.restante8, styles.restanteTypo] }>
@@ -210,13 +210,13 @@ const Home = () => {
       />
 
       <Image
-        style={ [styles.image53Icon, styles.iconLayout] }
+        style={ [styles.fotoEnergeticoMonster, styles.iconLayout] }
         contentFit="cover"
         source={ require('../assets/image-53.png') }
       />
 
       <Text style={ [styles.energticoMonster, styles.cupNoodlesTypo] }>
-        Energético Monster
+        Energético MONSTER
       </Text>
 
       <Text style={ [styles.restante12, styles.restanteTypo1] }>
@@ -232,19 +232,19 @@ const Home = () => {
       </Text>
 
       <Image
-        style={ [styles.image54Icon, styles.iconPosition] }
+        style={ [styles.fotoCervejaHeikenen, styles.iconPosition] }
         contentFit="cover"
         source={ require('../assets/image-54.png') }
       />
 
       <Image
-        style={ styles.image56Icon }
+        style={ styles.fotoSalgadinhoDoritos }
         contentFit="cover"
         source={ require('../assets/image-56.png') }
       />
 
       <Image
-        style={ styles.image55Icon }
+        style={ styles.fotoPaoVisconti }
         contentFit="cover"
         source={ require('../assets/image-55.png') }
       />
