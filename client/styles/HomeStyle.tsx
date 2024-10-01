@@ -2,10 +2,12 @@ import { StyleSheet } from 'react-native';
 import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
+
   restanteFlexBox: {
     textAlign: 'left',
     position: 'absolute',
   },
+
   homeLayout: {
     height: 146,
     width: 160,
@@ -14,14 +16,17 @@ const styles = StyleSheet.create({
     left: '50%',
     position: 'absolute',
   },
+
   priceTypo: {
     fontFamily: FontFamily.poppinsBold,
     fontWeight: '700',
   },
+
   lineViewBorder: {
     borderStyle: 'solid',
     position: 'absolute',
   },
+  
   containerPosition: {
     width: 199,
     marginLeft: -36,
@@ -30,10 +35,12 @@ const styles = StyleSheet.create({
     left: '50%',
     position: 'absolute',
   },
+
   nossosProdutosFlexBox: {
     textAlign: 'center',
     position: 'absolute',
   },
+
   homeChild3Position: {
     top: 315,
     height: 146,
@@ -42,11 +49,13 @@ const styles = StyleSheet.create({
     left: '50%',
     position: 'absolute',
   },
+
   iconLayout: {
     width: 58,
     height: 72,
     position: 'absolute',
   },
+
   cupNoodlesTypo: {
     top: 320,
     textAlign: 'center',
@@ -55,6 +64,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsRegular,
     position: 'absolute',
   },
+
   restanteTypo1: {
     top: 438,
     textAlign: 'left',
@@ -64,6 +74,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_3xs,
     position: 'absolute',
   },
+
   pricePosition1: {
     marginLeft: -156,
     color: Color.colorDeepskyblue,
@@ -76,6 +87,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     position: 'absolute',
   },
+
   restaurantTypo: {
     opacity: 0.3,
     color: Color.second,
@@ -87,6 +99,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     position: 'absolute',
   },
+
   poViscontiTypo: {
     top: 632,
     textAlign: 'center',
@@ -95,6 +108,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsRegular,
     position: 'absolute',
   },
+
   homeChildPosition: {
     top: 471,
     height: 146,
@@ -103,10 +117,12 @@ const styles = StyleSheet.create({
     left: '50%',
     position: 'absolute',
   },
+
   iconPosition: {
     top: 512,
     position: 'absolute',
   },
+
   cervejaHeinekenTypo: {
     top: 476,
     textAlign: 'center',
@@ -115,6 +131,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsRegular,
     position: 'absolute',
   },
+
   restanteTypo: {
     top: 594,
     textAlign: 'left',
@@ -124,6 +141,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_3xs,
     position: 'absolute',
   },
+
   pricePosition: {
     width: 68,
     marginLeft: 19,
@@ -137,6 +155,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     position: 'absolute',
   },
+
   restaurantPosition: {
     marginTop: 94,
     width: '25.83%',
@@ -149,21 +168,23 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     position: 'absolute',
   },
+
   restante6: {
-    left: 104,
+    left: 1,
     color: Color.colorBlack,
     letterSpacing: 1,
-    fontSize: FontSize.size_3xs,
     top: 750,
-    textAlign: 'left',
     fontFamily: FontFamily.poppinsRegular,
   },
+
   homeChild: {
     marginLeft: -166,
   },
+
   homeItem: {
     marginLeft: 9,
   },
+
   price: {
     marginLeft: 18,
     width: 63,
@@ -178,6 +199,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     position: 'absolute',
   },
+
   restante4: {
     left: 279,
     color: Color.colorBlack,
@@ -187,6 +209,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontFamily: FontFamily.poppinsRegular,
   },
+
   price1: {
     marginLeft: -157,
     width: 69,
@@ -201,29 +224,34 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     position: 'absolute',
   },
+
   olTypo: {
     color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsLight,
     fontWeight: '300',
   },
+
   john: {
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: '600',
     color: Color.colorDeepskyblue,
   },
+
   blankLine: {
     fontFamily: FontFamily.poppinsLight,
     fontWeight: '300',
     color: Color.colorBlack,
   },
+
   olJohn: {
     top: 181,
-    left: 17,
+    left: 150,
     fontSize: 20,
     letterSpacing: -0.6,
     width: 142,
     height: 32,
   },
+  
   homeInner: {
     bottom: 634,
     left: -1,
@@ -233,22 +261,28 @@ const styles = StyleSheet.create({
     width: 362,
     height: 167,
   },
+
   desejaVerO: {
     fontFamily: FontFamily.poppinsRegular,
   },
+
   text: {
     fontWeight: '500',
     fontFamily: FontFamily.poppinsMedium,
   },
+
   desejaVerOTutoralDeCompra: {
     color: Color.colorWhitesmoke,
   },
+
   cliqueAqui: {
     color: Color.colorDeepskyblue,
   },
+
   desejaVerOContainer: {
     bottom: 653,
   },
+
   lineView: {
     marginLeft: 2.5,
     top: 91,
@@ -258,16 +292,20 @@ const styles = StyleSheet.create({
     height: 1,
     left: '50%',
   },
+
   cdigoDeBarras: {
     color: Color.colorDeepskyblue,
   },
+
   naParteInferior: {
     color: Color.colorWhite,
     fontFamily: FontFamily.poppinsRegular,
   },
+
   paraIniciarSuaContainer: {
     bottom: 729,
   },
+  
   nossosProdutos: {
     marginLeft: -137,
     top: 277,
@@ -280,31 +318,40 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     left: '50%',
   },
+
   rectangleIcon: {
     marginLeft: -167,
   },
-  image52Icon: {
-    top: 356,
-    left: 63,
+
+  fotoCupNoodles: {
+    top: 350,
+    left: 77,
     height: 72,
   },
+
   cupNoodles: {
-    left: 55,
+    left: 75,
   },
-  restante61: {
-    left: 105,
+
+  textoRestante6: {
+    left: 120,
   },
+
   price2: {
     width: 67,
-    marginTop: 31,
+    marginTop: 93,
   },
+
   restaurantName: {
     width: '33.06%',
     left: '9.44%',
+    top: '50%'
   },
+
   poVisconti: {
-    left: 232,
+    left: 253,
   },
+
   restaurantName1: {
     width: '32.5%',
     left: '61.94%',
@@ -318,9 +365,11 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     position: 'absolute',
   },
+
   salgadinhoDoritos: {
-    left: 37,
+    left: 53,
   },
+
   restaurantName2: {
     left: '15%',
     width: '25.83%',
@@ -334,90 +383,111 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     position: 'absolute',
   },
+
   homeChild1: {
     marginLeft: 8,
   },
-  image58Icon: {
-    left: 217,
+
+  fotoChocolateSnickers: {
+    left: 228,
     width: 111,
     height: 56,
   },
+
   chocolateSnickers: {
-    left: 207,
+    left: 230,
   },
   restante20: {
-    left: 278,
+    left: 290,
   },
+
   price3: {
-    marginTop: 187,
+    marginTop: 250,
   },
+
   restaurantName3: {
     left: '63.89%',
   },
+
   homeChild2: {
     marginLeft: -167,
   },
+
   cervejaHeineken: {
-    left: 41,
+    left: 55,
   },
+
   restante8: {
-    left: 105,
+    left: 120,
   },
+
   price4: {
     width: 64,
-    marginTop: 187,
+    marginTop: 250,
   },
+
   restaurantName4: {
     left: '16.67%',
   },
+
   homeChild3: {
     marginLeft: 8,
   },
-  image53Icon: {
-    top: 355,
-    left: 243,
+
+  fotoEnergeticoMonster: {
+    top: 348,
+    left: 253,
     height: 72,
   },
+  
   energticoMonster: {
-    left: 210,
+    left: 227,
   },
+
   restante12: {
-    left: 280,
+    left: 290,
   },
+
   price5: {
-    marginTop: 31,
+    marginTop: 93,
   },
-  restaurantName5: {
+
+  textoLata437ML: {
     width: '18.89%',
     left: '66.11%',
   },
-  image54Icon: {
-    left: 56,
+
+  fotoCervejaHeikenen: {
+    left: 70,
     width: 76,
     height: 72,
+    marginTop: -5,
   },
-  image56Icon: {
+
+  fotoSalgadinhoDoritos: {
     top: 668,
-    left: 64,
+    left: 85,
     width: 50,
     height: 69,
     position: 'absolute',
   },
-  image55Icon: {
+
+  fotoPaoVisconti: {
     top: 664,
-    left: 236,
+    left: 250,
     width: 66,
     height: 77,
     position: 'absolute',
   },
+  
   image3Icon: {
-    marginLeft: -173,
-    top: 3,
+    marginLeft: -200,
     width: 138,
     height: 150,
     left: '50%',
     position: 'absolute',
   },
+
   homeChild4: {
     marginLeft: -146,
     top: 222,
@@ -427,7 +497,8 @@ const styles = StyleSheet.create({
     left: '50%',
     position: 'absolute',
   },
-  icon: {
+
+  fotoIconeLupa: {
     height: '2.1%',
     width: '4.67%',
     top: '28.88%',
@@ -435,10 +506,9 @@ const styles = StyleSheet.create({
     bottom: '69.03%',
     left: '12.5%',
     maxWidth: '100%',
-    maxHeight: '100%',
     position: 'absolute',
-    overflow: 'hidden',
   },
+
   buscarPorProduto: {
     top: 229,
     left: 80,
@@ -447,6 +517,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsLight,
     fontWeight: '300',
   },
+
   home: {
     backgroundColor: Color.colorWhite,
     flex: 1,
@@ -454,6 +525,7 @@ const styles = StyleSheet.create({
     height: 800,
     overflow: 'hidden',
   },
+
 });
 
 export default styles;

@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
   },
 
   nomeEsvaziarCesta: {
-    marginLeft: 74,
+    marginLeft: 65,
     color: Color.colorWhite,
     top: 453,
   },
