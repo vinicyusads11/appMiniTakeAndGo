@@ -4,8 +4,8 @@ import Welcome from "../../screens/Welcome"; // Caminho relativo
 //import Step1 from "../../screens/Step1";
 //import Step2 from "../../screens/Step2";
 //import Step3 from "../../screens/Step3";
-//import RegisterScreen from "../../screens/RegisterScreen";
-//import LoginScreen from "../../screens/LoginScreen";
+//import Register from "../../screens/Register";
+//import Login from "../../screens/Login";
 //import BranchStep from "../../screens/BranchStep";
 //import ScanBranch1 from "../../screens/ScanBranch1";
 //import ScanBarCode from "../../screens/ScanBarCode";
@@ -21,15 +21,15 @@ export default function Index() {
   //return <Step1 />;
   //return <Step2 />;
   //return <Step3 />;
-  //return <RegisterScreen/>;
-  //return <LoginScreen />;
+  //return <Register />;
+  //return <Login />;
   //return <BranchStep />;
   //return <ScanBranch1 />;
-  //return <ScanBarCode/>;
-  //return <EmptyBasket/>;
-  //return <Payment/>;
-  //return <OrderCompleted/>;
-  //return <OrderInfo/>;
+  //return <ScanBarCode />;
+  //return <EmptyBasket />;
+  //return <Payment />;
+  //return <OrderCompleted />;
+  //return <OrderInfo />;
 } 
 
 // Renderiza o componente 

@@ -1,8 +1,6 @@
-// TODO: estilizar e renomear este componente
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Image } from 'expo-image';
-import { FontFamily, Color } from '../GlobalStyles';
 import styles from '../styles/EmptyBasketStyle';
 
 

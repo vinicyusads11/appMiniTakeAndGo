@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
+
   johnLayout: {
     height: 20,
     position: 'absolute',
@@ -314,6 +315,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: Color.colorWhite,
   },
+  
 });
 
 export default styles;

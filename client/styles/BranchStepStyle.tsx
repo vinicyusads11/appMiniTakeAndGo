@@ -143,6 +143,6 @@ const styles = StyleSheet.create({
       backgroundColor: Color.colorWhite,
     },
 
-  });
+});
 
   export default styles;
