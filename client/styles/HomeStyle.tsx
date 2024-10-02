@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
 
   cupNoodlesTypo: {
-    top: 320,
+    top: '44%',
     textAlign: 'center',
     fontSize: FontSize.size_xs,
     color: Color.colorBlack,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
 
   restanteTypo1: {
-    top: 438,
+    top: '57%',
     textAlign: 'left',
     color: Color.colorBlack,
     fontFamily: FontFamily.poppinsRegular,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     lineHeight: 21,
     fontSize: FontSize.size_base,
-    top: '50%',
+    top: '44%',
     left: '50%',
     textAlign: 'left',
     position: 'absolute',
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   },
 
   poViscontiTypo: {
-    top: 632,
+    top: '85%',
     textAlign: 'center',
     fontSize: FontSize.size_xs,
     color: Color.colorBlack,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   },
 
   cervejaHeinekenTypo: {
-    top: 476,
+    top: '65%',
     textAlign: 'center',
     fontSize: FontSize.size_xs,
     color: Color.colorBlack,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     lineHeight: 21,
     fontSize: FontSize.size_base,
-    top: '50%',
+    top: '44%',
     left: '50%',
     textAlign: 'left',
     position: 'absolute',
@@ -170,10 +170,11 @@ const styles = StyleSheet.create({
   },
 
   restante6: {
-    left: 1,
+    left: '29%',
     color: Color.colorBlack,
     letterSpacing: 1,
     top: 750,
+    fontSize: FontSize.size_3xs,
     fontFamily: FontFamily.poppinsRegular,
   },
 
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
     color: Color.colorDeepskyblue,
     lineHeight: 21,
     fontSize: FontSize.size_base,
-    top: '50%',
+    top: '53%',
     marginTop: 343,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: '700',
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
   },
 
   restante4: {
-    left: 279,
+    left: '72%',
     color: Color.colorBlack,
     letterSpacing: 1,
     fontSize: FontSize.size_3xs,
@@ -216,7 +217,7 @@ const styles = StyleSheet.create({
     color: Color.colorDeepskyblue,
     lineHeight: 21,
     fontSize: FontSize.size_base,
-    top: '50%',
+    top: '53%',
     marginTop: 343,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: '700',
@@ -244,22 +245,22 @@ const styles = StyleSheet.create({
   },
 
   olJohn: {
-    top: 181,
-    left: 150,
+    top: '23%',
+    left: '5%',
     fontSize: 20,
     letterSpacing: -0.6,
-    width: 142,
-    height: 32,
+    width: '100%',
+    height: '100%',
   },
   
   homeInner: {
-    bottom: 634,
+    bottom: '80%',
     left: -1,
     backgroundColor: Color.colorGray,
     borderColor: Color.colorDeepskyblue,
     borderWidth: 1,
-    width: 362,
-    height: 167,
+    width: '100%',
+    height: '100%',
   },
 
   desejaVerO: {
@@ -303,7 +304,7 @@ const styles = StyleSheet.create({
   },
 
   paraIniciarSuaContainer: {
-    bottom: 729,
+    bottom: '92%',
   },
   
   nossosProdutos: {
@@ -343,9 +344,8 @@ const styles = StyleSheet.create({
   },
 
   restaurantName: {
-    width: '33.06%',
-    left: '9.44%',
-    top: '50%'
+    width: '40%',
+    left: '17%',
   },
 
   poVisconti: {
@@ -414,7 +414,7 @@ const styles = StyleSheet.create({
   },
 
   cervejaHeineken: {
-    left: 55,
+    left: '18%',
   },
 
   restante8: {
@@ -490,7 +490,7 @@ const styles = StyleSheet.create({
 
   homeChild4: {
     marginLeft: -146,
-    top: 222,
+    top: '29%',
     borderRadius: 35,
     width: 308,
     height: 35,
@@ -499,19 +499,19 @@ const styles = StyleSheet.create({
   },
 
   fotoIconeLupa: {
-    height: '2.1%',
-    width: '4.67%',
-    top: '28.88%',
+    height: '2%',
+    width: '4%',
+    top: '30%',
     right: '82.83%',
-    bottom: '69.03%',
-    left: '12.5%',
+    bottom: '80%',
+    left: '20%',
     maxWidth: '100%',
     position: 'absolute',
   },
 
   buscarPorProduto: {
-    top: 229,
-    left: 80,
+    top: '30%',
+    left: '30%',
     fontSize: 13,
     color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsLight,
