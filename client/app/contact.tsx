@@ -6,56 +6,36 @@ import styles from '../styles/ContactStyle';
 
 const Contact = () => {
   return (
-    <View style={ styles.contact }>
-
-      <View style={ styles.contactChild } />
-
+    <View style={styles.contact}>
       <Image
-        style={ styles.contactItem }
+        style={styles.contactItem}
         contentFit="cover"
-        source={ require('../assets/vector-36.png') }
+        source={require('../assets/vector-36.png')}
       />
 
-      <Text style={ styles.faleConosco }>
-        Fale conosco
-      </Text>
-
       <Image
-        style={ [styles.image14Icon, styles.image14IconPosition] }
+        style={[styles.image14Icon, styles.image14IconPosition]}
         contentFit="cover"
-        source={ require('../assets/whatsappicon.png') }
+        source={require('../assets/whatsappicon.png')}
       />
 
-      <Text style={ styles.algumProblemaOu }>
-        Algum problema ou dúvida?
+      <Text style={styles.algumProblemaOu}>Algum problema ou dúvida?</Text>
+
+      <Text style={[styles.cliqueNoConeContainer, styles.textTypo]}>
+        <Text style={styles.cliqueNo}>Clique no</Text>
+
+        <Text style={styles.coneTypo}>{` ícone `}</Text>
+
+        <Text style={styles.cliqueNo}>e entre em contato:</Text>
       </Text>
 
-      <Text style={ [styles.cliqueNoConeContainer, styles.textTypo] }>
-
-        <Text style={ styles.cliqueNo }>
-          Clique no
-        </Text>
-
-        <Text style={ styles.coneTypo }>
-          {` ícone `}
-        </Text>
-
-        <Text style={ styles.cliqueNo }>
-          e entre em contato:
-        </Text>
-
-      </Text>
-
-      <Text style={ [styles.text, styles.coneTypo] }>
-        +55 (48) 98800-2368
-      </Text>
+      <Text style={[styles.text, styles.coneTypo]}>+55 (48) 98800-2368</Text>
 
       <Image
-        style={ [styles.logotipoPretoSemFundo1, styles.image14IconPosition] }
+        style={[styles.logotipoPretoSemFundo1, styles.image14IconPosition]}
         contentFit="cover"
-        source={ require('../assets/logopretosemfundo.png') }
+        source={require('../assets/logopretosemfundo.png')}
       />
-      
     </View>
   );
 };
