@@ -9,6 +9,7 @@ export default function Layout() {
           backgroundColor: '#121212',
         },
         headerTintColor: '#FFF',
+        headerTitleAlign: 'center',
       }}
     >
       <Tabs.Screen
