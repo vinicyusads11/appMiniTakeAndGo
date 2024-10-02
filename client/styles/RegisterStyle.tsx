@@ -14,9 +14,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       flexDirection: 'row',
       height: 40,
-      width: 317,
+      width: '90%',
       borderStyle: 'solid',
-      position: 'absolute',
       backgroundColor: Color.colorWhite,
     },
 
@@ -61,22 +60,27 @@ const styles = StyleSheet.create({
     },
 
     input: {
-      top: 145,
+      top: '35%',
       left: 22,
     },
 
     input1: {
-      top: 227,
+      top: '45%',
       left: 22,
     },
 
     input2: {
-      top: 0,
-      left: 0,
+      top: '52%',
+      left: 22,
+    },
+
+    input3: {
+      top: '60%',
+      left: 22,
     },
 
     inputWrapper: {
-      top: 307,
+      top: '50%',
       height: 40,
       width: 317,
       left: 22,
@@ -141,22 +145,22 @@ const styles = StyleSheet.create({
     },
 
     registerChild: {
-      top: 597,
+      top: '79%',
       height: 35,
-      left: 22,
+      left: '12%',
     },
 
     image7Icon: {
-      top: 605,
-      left: 60,
+      top: '80%',
+      left: '30%',
       width: 20,
       height: 20,
       position: 'absolute',
     },
 
     continuarComGoogle: {
-      top: 607,
-      left: 122,
+      top: '80.5%',
+      left: '37%',
       color: Color.colorDarkslategray,
       fontSize: FontSize.size_3xs,
       fontFamily: FontFamily.poppinsSemiBold,
@@ -185,11 +189,6 @@ const styles = StyleSheet.create({
       fontSize: FontSize.size_smi,
       color: Color.colorBlack,
       fontFamily: FontFamily.poppinsRegular,
-      left: 22,
-    },
-
-    input3: {
-      top: 388,
       left: 22,
     },
 
