@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Image } from 'expo-image';
 import styles from '../styles/OrderInfoStyle';
 

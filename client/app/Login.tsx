@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, StyleSheet, View, Pressable } from 'react-native';
+import { Text, View, Pressable } from 'react-native';
 import { Image } from 'expo-image';
 import styles from '../styles/LoginStyle';
 import { useRouter } from 'expo-router';

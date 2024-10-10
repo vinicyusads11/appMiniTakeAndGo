@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Image } from 'expo-image';
-import { StyleSheet, Text, Pressable, View } from 'react-native';
+import { Text, Pressable, View } from 'react-native';
 import styles from '../styles/Step2Style';
 import { useRouter } from 'expo-router';
 
