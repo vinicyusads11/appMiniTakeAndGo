@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
 
   cupNoodlesTypo: {
-    top: '44%',
+    top: '43.5%',
     textAlign: 'center',
     fontSize: FontSize.size_xs,
     color: Color.colorBlack,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   },
 
   cervejaHeinekenTypo: {
-    top: '65%',
+    top: '64.15%',
     textAlign: 'center',
     fontSize: FontSize.size_xs,
     color: Color.colorBlack,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
 
   restante6: {
-    left: '29%',
+    left: '33.5%',
     color: Color.colorBlack,
     letterSpacing: 1,
     top: 750,
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
   },
 
   restante4: {
-    left: '72%',
+    left: '74%',
     color: Color.colorBlack,
     letterSpacing: 1,
     fontSize: FontSize.size_3xs,
@@ -326,16 +326,16 @@ const styles = StyleSheet.create({
 
   fotoCupNoodles: {
     top: 350,
-    left: 77,
+    left: 100,
     height: 72,
   },
 
   cupNoodles: {
-    left: 75,
+    left: 93,
   },
 
   textoRestante6: {
-    left: 120,
+    left: 141,
   },
 
   price2: {
@@ -348,13 +348,13 @@ const styles = StyleSheet.create({
     left: '17%',
   },
 
-  poVisconti: {
-    left: 253,
+  paoVisconti: {
+    left: 270,
   },
 
-  restaurantName1: {
+  tradicional400g: {
     width: '32.5%',
-    left: '61.94%',
+    left: '60%',
     marginTop: 250,
     opacity: 0.3,
     color: Color.second,
@@ -367,11 +367,11 @@ const styles = StyleSheet.create({
   },
 
   salgadinhoDoritos: {
-    left: 53,
+    left: 73,
   },
 
   restaurantName2: {
-    left: '15%',
+    left: '22%',
     width: '25.83%',
     marginTop: 250,
     opacity: 0.3,
@@ -389,16 +389,17 @@ const styles = StyleSheet.create({
   },
 
   fotoChocolateSnickers: {
-    left: 228,
+    left: 247,
     width: 111,
     height: 56,
   },
 
   chocolateSnickers: {
-    left: 230,
+    left: 247,
   },
+
   restante20: {
-    left: 290,
+    left: 310,
   },
 
   price3: {
@@ -418,7 +419,7 @@ const styles = StyleSheet.create({
   },
 
   restante8: {
-    left: 120,
+    left: 140,
   },
 
   price4: {
@@ -427,7 +428,7 @@ const styles = StyleSheet.create({
   },
 
   restaurantName4: {
-    left: '16.67%',
+    left: '22%',
   },
 
   homeChild3: {
@@ -436,16 +437,16 @@ const styles = StyleSheet.create({
 
   fotoEnergeticoMonster: {
     top: 348,
-    left: 253,
+    left: 273,
     height: 72,
   },
   
   energticoMonster: {
-    left: 227,
+    left: 245,
   },
 
   restante12: {
-    left: 290,
+    left: 310,
   },
 
   price5: {
@@ -454,11 +455,11 @@ const styles = StyleSheet.create({
 
   textoLata437ML: {
     width: '18.89%',
-    left: '66.11%',
+    left: '64.11%',
   },
 
   fotoCervejaHeikenen: {
-    left: 70,
+    left: 87,
     width: 76,
     height: 72,
     marginTop: -5,
@@ -466,7 +467,7 @@ const styles = StyleSheet.create({
 
   fotoSalgadinhoDoritos: {
     top: 668,
-    left: 85,
+    left: 100,
     width: 50,
     height: 69,
     position: 'absolute',
@@ -474,7 +475,7 @@ const styles = StyleSheet.create({
 
   fotoPaoVisconti: {
     top: 664,
-    left: 250,
+    left: 270,
     width: 66,
     height: 77,
     position: 'absolute',
