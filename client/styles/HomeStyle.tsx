@@ -2,531 +2,94 @@ import { StyleSheet } from 'react-native';
 import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
-
-  restanteFlexBox: {
-    textAlign: 'left',
-    position: 'absolute',
-  },
-
-  homeLayout: {
-    height: 146,
-    width: 160,
-    borderRadius: Border.br_3xs,
-    top: 627,
-    left: '50%',
-    position: 'absolute',
-  },
-
-  priceTypo: {
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: '700',
-  },
-
-  lineViewBorder: {
-    borderStyle: 'solid',
-    position: 'absolute',
-  },
-  
   containerPosition: {
-    width: 199,
-    marginLeft: -36,
-    textAlign: 'center',
-    fontSize: FontSize.size_xs,
-    left: '50%',
-    position: 'absolute',
+    textAlign: "center",
+    left: "50%",
+    position: "absolute",
   },
-
-  nossosProdutosFlexBox: {
-    textAlign: 'center',
-    position: 'absolute',
-  },
-
-  homeChild3Position: {
-    top: 315,
-    height: 146,
-    width: 160,
-    borderRadius: Border.br_3xs,
-    left: '50%',
-    position: 'absolute',
-  },
-
-  iconLayout: {
-    width: 58,
-    height: 72,
-    position: 'absolute',
-  },
-
-  cupNoodlesTypo: {
-    top: '43.5%',
-    textAlign: 'center',
-    fontSize: FontSize.size_xs,
-    color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsRegular,
-    position: 'absolute',
-  },
-
-  restanteTypo1: {
-    top: '57%',
-    textAlign: 'left',
-    color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsRegular,
-    letterSpacing: 1,
-    fontSize: FontSize.size_3xs,
-    position: 'absolute',
-  },
-
-  pricePosition1: {
-    marginLeft: -156,
-    color: Color.colorDeepskyblue,
+  cliqueAquiTypo: {
     fontFamily: FontFamily.poppinsBold,
-    fontWeight: '700',
-    lineHeight: 21,
-    fontSize: FontSize.size_base,
-    top: '44%',
-    left: '50%',
-    textAlign: 'left',
-    position: 'absolute',
+    fontWeight: "700",
   },
-
-  restaurantTypo: {
-    opacity: 0.3,
-    color: Color.second,
-    fontSize: FontSize.size_2xs,
-    marginTop: -62,
-    top: '50%',
-    textAlign: 'left',
-    fontFamily: FontFamily.poppinsRegular,
-    letterSpacing: 1,
-    position: 'absolute',
-  },
-
-  poViscontiTypo: {
-    top: '85%',
-    textAlign: 'center',
-    fontSize: FontSize.size_xs,
-    color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsRegular,
-    position: 'absolute',
-  },
-
   homeChildPosition: {
-    top: 471,
-    height: 146,
-    width: 160,
-    borderRadius: Border.br_3xs,
-    left: '50%',
-    position: 'absolute',
+    position: "absolute",
+    left: "50%",
   },
-
-  iconPosition: {
-    top: 512,
-    position: 'absolute',
+  iconLayout: {
+    maxHeight: "100%",
+    position: "absolute",
   },
-
-  cervejaHeinekenTypo: {
-    top: '64.15%',
-    textAlign: 'center',
-    fontSize: FontSize.size_xs,
-    color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsRegular,
-    position: 'absolute',
-  },
-
-  restanteTypo: {
-    top: 594,
-    textAlign: 'left',
-    color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsRegular,
-    letterSpacing: 1,
-    fontSize: FontSize.size_3xs,
-    position: 'absolute',
-  },
-
-  pricePosition: {
-    width: 68,
-    marginLeft: 19,
-    color: Color.colorDeepskyblue,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: '700',
-    lineHeight: 21,
-    fontSize: FontSize.size_base,
-    top: '44%',
-    left: '50%',
-    textAlign: 'left',
-    position: 'absolute',
-  },
-
-  restaurantPosition: {
-    marginTop: 94,
-    width: '25.83%',
-    opacity: 0.3,
-    color: Color.second,
-    fontSize: FontSize.size_2xs,
-    top: '50%',
-    textAlign: 'left',
-    fontFamily: FontFamily.poppinsRegular,
-    letterSpacing: 1,
-    position: 'absolute',
-  },
-
-  restante6: {
-    left: '33.5%',
-    color: Color.colorBlack,
-    letterSpacing: 1,
-    top: 750,
-    fontSize: FontSize.size_3xs,
-    fontFamily: FontFamily.poppinsRegular,
-  },
-
-  homeChild: {
-    marginLeft: -166,
-  },
-
-  homeItem: {
-    marginLeft: 9,
-  },
-
-  price: {
-    marginLeft: 18,
-    width: 63,
-    color: Color.colorDeepskyblue,
-    lineHeight: 21,
-    fontSize: FontSize.size_base,
-    top: '53%',
-    marginTop: 343,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: '700',
-    left: '50%',
-    textAlign: 'left',
-    position: 'absolute',
-  },
-
-  restante4: {
-    left: '74%',
-    color: Color.colorBlack,
-    letterSpacing: 1,
-    fontSize: FontSize.size_3xs,
-    top: 750,
-    textAlign: 'left',
-    fontFamily: FontFamily.poppinsRegular,
-  },
-
-  price1: {
-    marginLeft: -157,
-    width: 69,
-    color: Color.colorDeepskyblue,
-    lineHeight: 21,
-    fontSize: FontSize.size_base,
-    top: '53%',
-    marginTop: 343,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: '700',
-    left: '50%',
-    textAlign: 'left',
-    position: 'absolute',
-  },
-
-  olTypo: {
-    color: Color.colorDarkslategray_100,
-    fontFamily: FontFamily.poppinsLight,
-    fontWeight: '300',
-  },
-
-  john: {
-    fontFamily: FontFamily.poppinsSemiBold,
-    fontWeight: '600',
-    color: Color.colorDeepskyblue,
-  },
-
-  blankLine: {
-    fontFamily: FontFamily.poppinsLight,
-    fontWeight: '300',
-    color: Color.colorBlack,
-  },
-
-  olJohn: {
-    top: '23%',
-    left: '5%',
-    fontSize: 20,
-    letterSpacing: -0.6,
-    width: '100%',
-    height: '100%',
-  },
-  
-  homeInner: {
-    bottom: '80%',
-    left: -1,
-    backgroundColor: Color.colorGray,
-    borderColor: Color.colorDeepskyblue,
-    borderWidth: 1,
-    width: '100%',
-    height: '100%',
-  },
-
   desejaVerO: {
     fontFamily: FontFamily.poppinsRegular,
   },
-
   text: {
-    fontWeight: '500',
+    fontWeight: "500",
     fontFamily: FontFamily.poppinsMedium,
   },
-
   desejaVerOTutoralDeCompra: {
-    color: Color.colorWhitesmoke,
+    color: Color.colorGray,
   },
-
   cliqueAqui: {
     color: Color.colorDeepskyblue,
   },
-
   desejaVerOContainer: {
-    bottom: 653,
+    marginLeft: -100,
+    bottom: 62,
+    fontSize: 13,
+    width: 199,
   },
-
-  lineView: {
-    marginLeft: 2.5,
-    top: 91,
-    borderColor: '#b1b1b1',
-    borderTopWidth: 1,
-    width: 121,
-    height: 1,
-    left: '50%',
-  },
-
   cdigoDeBarras: {
     color: Color.colorDeepskyblue,
   },
-
-  naParteInferior: {
-    color: Color.colorWhite,
+  abaixo: {
     fontFamily: FontFamily.poppinsRegular,
-  },
-
-  paraIniciarSuaContainer: {
-    bottom: '92%',
-  },
-  
-  nossosProdutos: {
-    marginLeft: -137,
-    top: 277,
     color: Color.colorGray,
-    width: 274,
-    height: 27,
-    fontSize: FontSize.size_xs,
-    textAlign: 'center',
-    fontFamily: FontFamily.poppinsSemiBold,
-    fontWeight: '600',
-    left: '50%',
   },
-
-  rectangleIcon: {
-    marginLeft: -167,
+  paraIniciarSuaContainer: {
+    marginLeft: -132,
+    bottom: 430,
+    fontSize: 20,
+    width: 264,
   },
-
-  fotoCupNoodles: {
-    top: 350,
-    left: 100,
-    height: 72,
-  },
-
-  cupNoodles: {
-    left: 93,
-  },
-
-  textoRestante6: {
-    left: 141,
-  },
-
-  price2: {
-    width: 67,
-    marginTop: 93,
-  },
-
-  restaurantName: {
-    width: '40%',
-    left: '17%',
-  },
-
-  paoVisconti: {
-    left: 270,
-  },
-
-  tradicional400g: {
-    width: '32.5%',
-    left: '60%',
-    marginTop: 250,
-    opacity: 0.3,
-    color: Color.second,
-    fontSize: FontSize.size_2xs,
-    top: '50%',
-    textAlign: 'left',
-    fontFamily: FontFamily.poppinsRegular,
-    letterSpacing: 1,
-    position: 'absolute',
-  },
-
-  salgadinhoDoritos: {
-    left: 73,
-  },
-
-  restaurantName2: {
-    left: '22%',
-    width: '25.83%',
-    marginTop: 250,
-    opacity: 0.3,
-    color: Color.second,
-    fontSize: FontSize.size_2xs,
-    top: '50%',
-    textAlign: 'left',
-    fontFamily: FontFamily.poppinsRegular,
-    letterSpacing: 1,
-    position: 'absolute',
-  },
-
-  homeChild1: {
-    marginLeft: 8,
-  },
-
-  fotoChocolateSnickers: {
-    left: 247,
-    width: 111,
-    height: 56,
-  },
-
-  chocolateSnickers: {
-    left: 247,
-  },
-
-  restante20: {
-    left: 310,
-  },
-
-  price3: {
-    marginTop: 250,
-  },
-
-  restaurantName3: {
-    left: '63.89%',
-  },
-
-  homeChild2: {
-    marginLeft: -167,
-  },
-
-  cervejaHeineken: {
-    left: '18%',
-  },
-
-  restante8: {
-    left: 140,
-  },
-
-  price4: {
-    width: 64,
-    marginTop: 250,
-  },
-
-  restaurantName4: {
-    left: '22%',
-  },
-
-  homeChild3: {
-    marginLeft: 8,
-  },
-
-  fotoEnergeticoMonster: {
-    top: 348,
-    left: 273,
-    height: 72,
-  },
-  
-  energticoMonster: {
-    left: 245,
-  },
-
-  restante12: {
-    left: 310,
-  },
-
-  price5: {
-    marginTop: 93,
-  },
-
-  textoLata437ML: {
-    width: '18.89%',
-    left: '64.11%',
-  },
-
-  fotoCervejaHeikenen: {
-    left: 87,
-    width: 76,
-    height: 72,
-    marginTop: -5,
-  },
-
-  fotoSalgadinhoDoritos: {
-    top: 668,
-    left: 100,
-    width: 50,
-    height: 69,
-    position: 'absolute',
-  },
-
-  fotoPaoVisconti: {
-    top: 664,
-    left: 270,
-    width: 66,
-    height: 77,
-    position: 'absolute',
-  },
-  
-  image3Icon: {
-    marginLeft: -200,
-    width: 138,
+  homeChild: {
+    marginLeft: -75,
+    top: 405,
+    width: 150,
     height: 150,
-    left: '50%',
-    position: 'absolute',
+    left: "50%",
   },
-
-  homeChild4: {
-    marginLeft: -146,
-    top: '29%',
-    borderRadius: 35,
-    width: 308,
-    height: 35,
-    left: '50%',
-    position: 'absolute',
+  vectorIcon: {
+    height: "11.13%",
+    marginLeft: -52,
+    top: "53.88%",
+    bottom: "35%",
+    width: 104,
+    left: "50%",
   },
-
-  fotoIconeLupa: {
-    height: '2%',
-    width: '4%',
-    top: '30%',
-    right: '82.83%',
-    bottom: '80%',
-    left: '20%',
-    maxWidth: '100%',
-    position: 'absolute',
+  groupIcon: {
+    height: "5.18%",
+    width: "15.56%",
+    top: "56.74%",
+    right: "42.22%",
+    bottom: "38.09%",
+    left: "42.22%",
+    maxWidth: "100%",
+    overflow: "hidden",
   },
-
-  buscarPorProduto: {
-    top: '30%',
-    left: '30%',
-    fontSize: 13,
-    color: Color.colorDarkslategray_100,
-    fontFamily: FontFamily.poppinsLight,
-    fontWeight: '300',
+  logotipopretosemfundoIcon: {
+    marginLeft: -73,
+    top: 30,
+    width: 145,
+    height: 202,
+    left: "50%",
   },
-
   home: {
-    backgroundColor: Color.colorWhite,
+    backgroundColor: "#fff",
     flex: 1,
-    width: '100%',
+    width: "100%",
     height: 800,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
-
 });
 
 export default styles;
