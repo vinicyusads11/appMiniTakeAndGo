@@ -225,9 +225,9 @@ const styles = StyleSheet.create({
     restaurantName: {
       marginTop: -196,
       marginLeft: -89,
-      top: '50%',
+      top: '47%',
       fontSize: 10,
-      color: Color.second,
+      color: Color.colorRed,
       textAlign: 'left',
       width: 179,
       opacity: 0.3,
