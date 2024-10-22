@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
-import { Redirect } from 'expo-router';
 
 const styles = StyleSheet.create({
+
   basket: {
     backgroundColor: Color.colorWhite,
     flex: 1,
@@ -400,6 +400,7 @@ const styles = StyleSheet.create({
   numero3EnergeticoMonster: {
     top: 190,
   },
+  
 });
 
 export default styles;
