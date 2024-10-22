@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Image } from 'expo-image';
 import { Button, StyleSheet, TouchableOpacity, Pressable, Text, View } from 'react-native';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
-import styles from '../../styles/ScanBarCodeStyle'; // Certifique-se de que este arquivo contém os estilos apropriados
+import styles from '../../styles/ScanBarCodeStyle';
 import { useState } from 'react';
 import { useRouter } from 'expo-router';
 
@@ -19,7 +19,7 @@ const ScanBarCode = () => {
     return (
       <View style={localStyles.container}>
         <Text style={localStyles.message}>Precisamos de sua permissão para acessar a câmera</Text>
-        <Button onPress={requestPermission} title="Grant Permission" />
+        <Button onPress={requestPermission} title="Condeder permissão" />
       </View>
     );
   }
@@ -55,7 +55,6 @@ const ScanBarCode = () => {
           </View>
         </CameraView>
       </View>
-      {/* Botão Voltar na parte inferior */}
       <Pressable onPress={() => router.push('/(tabs)/home')} style={localStyles.backButtonContainer}>
         <View style={localStyles.backButton}>
           <Text style={localStyles.backButtonText}>Voltar</Text>
@@ -71,7 +70,7 @@ const ScanBarCode = () => {
 const localStyles = StyleSheet.create({
   scanbarcode: {
     flex: 1,
-    justifyContent: 'space-between', // Distribui espaço entre os elementos
+    justifyContent: 'space-between', 
   },
   container: {
     flex: 1,
@@ -86,41 +85,41 @@ const localStyles = StyleSheet.create({
   },
   cameraContainer: {
     width: '100%',
-    height: 200, // altura da câmera
-    justifyContent: 'flex-end', // posição na parte inferior
-    alignItems: 'center', // centraliza horizontalmente
+    height: 200,
+    justifyContent: 'flex-end', 
+    alignItems: 'center', 
   },
   camera: {
     width: '100%',
-    height: '100%', // ocupa todo o espaço da câmera
+    height: '100%',
   },
   button: {
-    width: '30%', // largura do botão reduzida
+    width: '30%', 
     alignItems: 'center',
     padding: 10,
-    backgroundColor: '#3cb3f6', // cor do botão
+    backgroundColor: '#3cb3f6', 
     borderRadius: 5,
-    marginTop: 10, // espaçamento entre o botão e a câmera
+    marginTop: 10, 
   },
   buttonText: {
-    color: 'white', // cor do texto do botão
+    color: 'white', 
   },
   backButtonContainer: {
-    alignItems: 'center', // Centraliza o botão horizontalmente
-    marginVertical: 10,   // Adiciona margem vertical para subir o botão
-    marginBottom: 40,     // Ajusta a margem inferior para controlar a posição
+    alignItems: 'center', 
+    marginVertical: 10,   
+    marginBottom: 40,    
   },
   backButton: {
-    backgroundColor: '#3cb3f6', // cor azul do botão "Voltar"
-    padding: 10,               // Reduz o padding para diminuir a altura do botão
+    backgroundColor: '#3cb3f6', 
+    padding: 10,              
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '40%',              // Reduz a largura do botão
+    width: '40%',              
     
   },
   backButtonText: {
-    color: 'white', // cor do texto do botão "Voltar"
+    color: 'white', 
     fontSize: 18,
     fontWeight: 'bold',
   },
