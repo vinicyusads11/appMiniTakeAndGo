@@ -9,7 +9,7 @@ const Basket = () => {
   const router = useRouter();
   return (
     <View style={styles.basket}>
-      <Pressable onPress={() => router.push('/home')}>
+      <Pressable onPress={() => router.push('/(tabs)/home')}>
         <Image
           style={styles.basketItem}
           contentFit="cover"
