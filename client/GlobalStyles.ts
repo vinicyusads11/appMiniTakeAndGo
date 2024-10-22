@@ -20,6 +20,7 @@ export const FontFamily = {
     colorDarkgray: "#b1b1b1",
     ffffff: "#111719",
     subColor: "#9796a1",
+    colorRed: "#FF0000",
   };
 
 export const FontSize = {
