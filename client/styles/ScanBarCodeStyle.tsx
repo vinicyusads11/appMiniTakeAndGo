@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     restaurantNamePosition: {
       letterSpacing: 1,
       left: '50%',
+      top: '50%',
       position: 'absolute',
     },
 
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
       letterSpacing: 1,
       left: '50%',
       position: 'absolute',
-      marginLeft: -164,
+      marginLeft: -130,
       fontSize: FontSize.size_sm,
     },
 
@@ -224,13 +225,12 @@ const styles = StyleSheet.create({
 
     restaurantName: {
       marginTop: -196,
-      marginLeft: -89,
+      marginLeft: -130,
       top: '47%',
-      fontSize: 10,
+      fontSize: 20,
       color: Color.colorRed,
       textAlign: 'left',
-      width: 179,
-      opacity: 0.3,
+      width: 300,
       fontFamily: FontFamily.poppinsRegular,
     },
 
@@ -241,6 +241,19 @@ const styles = StyleSheet.create({
       height: 800,
       overflow: 'hidden',
     },
+    cameraContainer: {
+      flex: 1,
+      width: '100%',
+      height: 200, // Ajuste a altura conforme desejado
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginVertical: 20,
+    },
+    camera: {
+      flex: 1,
+      width: '100%',
+    }
+    
 
 });
 
