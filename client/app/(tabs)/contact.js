@@ -9,7 +9,7 @@ const Contact = () => {
   const router = useRouter();
   return (
     <View style={styles.contact}>
-      <Pressable onPress={() => router.push('/home')}>
+      <Pressable onPress={() => router.push('/(tabs)/home')}>
         <Image
           style={styles.contactItem}
           contentFit="cover"
