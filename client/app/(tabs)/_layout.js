@@ -31,15 +31,6 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
-        options={{
-          title: 'Perfil',
-          tabBarIcon: ({}) => {
-            return <AntDesign name="user" color={'#3cb3f6'} size={28} />;
-          },
-        }}
-      />
-      <Tabs.Screen
         name="contact"
         options={{
           title: 'Contato',
