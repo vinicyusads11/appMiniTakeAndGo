@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button, Linking, Pressable } from 'react-native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
+import { CameraView, Camera } from 'expo-camera';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import styles from '../../styles/ScanBarCodeStyles';
@@ -11,16 +11,25 @@ export default function ScanBarCode() {
   const router = useRouter();
 
   useEffect(() => {
-    (async () => {
-      const { status } = await BarCodeScanner.requestPermissionsAsync();
+    const getCameraPermissions = async () => {
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === 'granted');
-    })();
+    };
+
+    getCameraPermissions();
   }, []);
 
-  const handleBarCodeScanned = ({ type, data }) => {
+  const handleBarcodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Código de barra com o tipo ${type} e código ${data} foi escaneado com sucesso!`);
+    alert(`Código de barras do tipo ${type} e código ${data} foi escaneado com sucesso!`);
   };
+
+  if (hasPermission === null) {
+    return <Text>Solicitando acesso a camera...</Text>;
+  }
+  if (hasPermission === false) {
+    return <Text>Sem acesso a câmera</Text>;
+  }
 
   return (
     <View style={styles.scanbarcode}>
@@ -43,16 +52,29 @@ export default function ScanBarCode() {
       <Text style={[styles.restaurantName, styles.restaurantNamePosition]}>
         Não leve os produtos sem pagar
       </Text>
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+      <CameraView
+        onBarcodeScanned={scanned ? undefined : handleBarcodeScanned}
+        barcodeScannerSettings={{
+          barcodeTypes: [
+            "qr",        // QR Code (Quick Response Code)
+            "ean13",     // EAN-13 (European Article Number 13) - Comum em produtos de mercado
+            "ean8",      // EAN-8 (European Article Number 8) - Versão reduzida do EAN-13
+            "upc_a",     // UPC-A (Universal Product Code A) - Comum nos EUA e Canadá
+            "upc_e",     // UPC-E (Universal Product Code E) - Versão compacta do UPC-A
+            "code128",   // Code 128 - Usado em transporte, logística e etiquetas de remessa
+            "code39",    // Code 39 - Código alfanumérico usado em indústrias e inventário
+            "code93",    // Code 93 - Versão compacta e mais eficiente do Code 39
+            "pdf417",    // PDF417 - Código bidimensional, usado em documentos como carteiras de motorista
+            "itf14"      // ITF-14 (Interleaved 2 of 5) - Usado para identificar embalagens e caixas no comércio
+          ],
+        }}
         style={StyleSheet.absoluteFillObject}
       />
-      {scanned && (
-        <Button title="Clique aqui para escanear novamente" onPress={() => setScanned(false)} />
-      )}
-
-      {/* Botão Voltar fixado na parte inferior da tela */}
-      <Pressable onPress={() => router.push('/(tabs)/home')} style={localStyles.backButtonContainer}>
+      {scanned && <Button title={'Clique aqui para escanear novamente'} onPress={() => setScanned(false)} />}
+      <Pressable
+        onPress={() => router.push('/(tabs)/home')}
+        style={localStyles.backButtonContainer}
+      >
         <View style={localStyles.backButton}>
           <Text style={localStyles.backButtonText}>Voltar</Text>
         </View>
