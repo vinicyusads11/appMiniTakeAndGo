@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button, Linking, Pressable } from 'react-native';
+import { Text, View, StyleSheet, Button, Alert, Pressable } from 'react-native';
 import { CameraView, Camera } from 'expo-camera';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
@@ -11,18 +11,41 @@ export default function ScanBarCode() {
   const router = useRouter();
 
   useEffect(() => {
-    const getCameraPermissions = async () => {
+    (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === 'granted');
-    };
-
-    getCameraPermissions();
+    })();
   }, []);
 
-  const handleBarcodeScanned = ({ type, data }) => {
+  const handleBarcodeScanned = async ({ data }) => {
     setScanned(true);
-    alert(`Código de barras do tipo ${type} e código ${data} foi escaneado com sucesso!`);
+    console.log("Código de barras escaneado:", data);
+  
+    try {
+      const response = await fetch('http://192.168.1.2:5000/product', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ barcode: data })
+      });
+  
+      if (response.ok) {
+        const product = await response.json();
+        if (product) {
+          Alert.alert(
+            'Produto adicionado!',
+            `${product.name}, com o valor de R$ ${product.price.toFixed(2)}, foi adicionado ao carrinho!`
+          );
+        } else {
+          Alert.alert('Erro', 'Produto não encontrado no banco de dados.');
+        }
+      } else {
+        Alert.alert('Erro', 'Produto não encontrado.');
+      }
+    } catch (error) {
+      Alert.alert('Erro', 'Falha ao buscar produto.');
+    }
   };
+  
 
   if (hasPermission === null) {
     return <Text>Solicitando acesso a camera...</Text>;
