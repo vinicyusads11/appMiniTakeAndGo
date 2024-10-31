@@ -1,193 +1,105 @@
 import { StyleSheet } from 'react-native';
-import { Color, FontSize, FontFamily, Border, Padding } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
-    step3Layout: {
-      height: 30,
-      width: 30,
-      position: 'absolute',
-    },
+  step3: {
+    backgroundColor: '#fff',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 50,
+    paddingHorizontal: 20,
+  },
 
-    textTypo: {
-      color: Color.colorWhite,
-      fontFamily: FontFamily.poppinsSemiBold,
-      fontWeight: '600',
-    },
-    
-    text1Clr: {
-      color: Color.colorGray,
-      fontSize: FontSize.size_xs,
-    },
+  umCdigoqrCode: {
+    fontSize: 18,
+    color: '#3cb3f6',
+    textAlign: 'center',
+    width: '80%',
+    marginBottom: 20,
+  },
 
-    text1Position: {
-      left: '50%',
-      position: 'absolute',
-    },
+  agoraS: {
+    fontSize: 16,
+    color: '#555',
+    textAlign: 'center',
+    width: '80%',
+    marginBottom: 40,
+  },
 
-    text1Layout: {
-      width: 204,
-      marginLeft: -12,
-    },
+  cestaIcon: {
+    width: 200,
+    height: 200,
+    marginBottom: 40,
+  },
 
-    agoraSTypo: {
-      fontSize: FontSize.size_3xs,
-      textAlign: 'center',
-      left: '50%',
-      color: Color.colorGray,
-      position: 'absolute',
-    },
+  // Botão PRÓXIMO (à direita)
+  prximo: {
+    position: 'absolute',
+    bottom: 80,
+    right: 20,
+    backgroundColor: '#3cb3f6',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  prximoTexto: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 
-    lineViewLayout: {
-      height: 1,
-      width: 36,
-      borderTopWidth: 1,
-      borderColor: Color.colorDeepskyblue,
-      borderStyle: 'solid',
-      top: 111,
-      position: 'absolute',
-    },
+  // Botão VOLTAR (à esquerda)
+  voltar: {
+    position: 'absolute',
+    bottom: 80,
+    left: 20,
+    backgroundColor: '#3cb3f6',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  voltarTexto: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 
-    step3Child: {
-      left: 280,
-      top: 96,
-    },
+  // Etapas de progresso
+  bola1: { left: 80, width: 30, height: 30, top: 96, position: 'absolute' },
+  bola2: { left: 180 },
+  bola3: { left: 280 },
+  lineView: { left: 150 },
+  lineViewLayout: {
+    height: 1,
+    width: 36,
+    borderTopWidth: 1,
+    borderColor: '#3cb3f6',
+    borderStyle: 'solid',
+    top: 111,
+    position: 'absolute',
+  },
 
-    text: {
-      left: 290,
-      fontSize: FontSize.size_xl,
-      textAlign: 'left',
-      top: 99,
-      position: 'absolute',
-    },
-
-    step3Item: {
-      left: 120,
-      top: 96,
-    },
-
-    step3Inner: {
-      left: 200,
-      top: 96,
-    },
-
-    voltar1: {
-      width: 45,
-      height: 18,
-      fontFamily: FontFamily.poppinsRegular,
-      color: Color.colorGray,
-      fontSize: FontSize.size_xs,
-      textAlign: 'left',
-    },
-
-    voltar: {
-      left: 40,
-      top: 753,
-      position: 'absolute',
-    },
-
-    umCdigoqrCode: {
-      marginLeft: -107,
-      top: 446,
-      width: 214,
-      height: 47,
-      textAlign: 'center',
-      color: Color.colorGray,
-      fontSize: FontSize.size_xs,
-      left: '50%',
-      fontFamily: FontFamily.poppinsSemiBold,
-      fontWeight: '600',
-    },
-
-    text1: {
-      top: 489,
-      height: 39,
-      textAlign: 'center',
-      left: '50%',
-      position: 'absolute',
-      color: Color.colorGray,
-      fontSize: FontSize.size_xs,
-      fontFamily: FontFamily.poppinsRegular,
-    },
-
-    agoraS: {
-      top: 492,
-      fontWeight: '500',
-      fontFamily: FontFamily.poppinsMedium,
-      height: 17,
-      width: 204,
-      marginLeft: -102,
-    },
-
-    button1: {
-      fontSize: 11,
-      textAlign: 'center',
-    },
-
-    button: {
-      top: 560,
-      left: 55,
-      borderRadius: 12,
-      backgroundColor: Color.colorDeepskyblue,
-      width: 317,
-      height: 40,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingHorizontal: Padding.p_xl,
-      paddingVertical: Padding.p_mini,
-      position: 'absolute',
-    },
-
-    jTenhoUma: {
-      marginLeft: -40,
-      top: 617,
-      fontFamily: FontFamily.poppinsSemiBold,
-      fontWeight: '600',
-      fontSize: FontSize.size_3xs,
-    },
-
-    icon: {
-      height: '100%',
-      width: '100%',
-    },
-
-    crossblue: {
-      left: 375,
-      top: 23,
-      width: 30,
-      height: 30,
-      position: 'absolute',
-    },
-
-    lineView: {
-      left: 158,
-    },
-
-    step3Child1: {
-      left: 238,
-    },
-
-    rectangleIcon: {
-      marginLeft: -99,
-      top: 238,
-      borderRadius: 20,
-      width: 198,
-      height: 198,
-    },
-
-    groupIcon: {
-      top: 405,
-      left: 295,
-    },
-    
-    step3: {
-      backgroundColor: Color.colorWhite,
-      flex: 1,
-      height: 800,
-      overflow: 'hidden',
-      width: '100%',
-    },
-
+  text: {
+    left: 110,
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#ffffff',
+    top: 99,
+    textAlign: 'left',
+    position: 'absolute',
+  },
 });
 
 export default styles;

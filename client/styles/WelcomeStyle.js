@@ -1,94 +1,71 @@
 import { StyleSheet } from 'react-native';
-import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
+  // Contêiner da tela
+  welcome: {
+    backgroundColor: '#fff',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 50, // Adiciona espaçamento superior e inferior para evitar cortes
+    paddingHorizontal: 20,
+  },
 
-    botaoProximo: {
-      textAlign: 'left',
-      color: Color.colorGray,
-    },
+  // Logotipo - Removido marginTop para evitar cortes
+  logotipoPreto: {
+    width: 200,
+    height: 280,
+    marginBottom: 40,
+  },
 
-    sigaAquiComTypo: {
-      fontFamily: FontFamily.poppinsSemiBold,
-      fontWeight: '600',
-      left: '50%',
-      position: 'absolute',
-    },
-    
-    bemVindoAMiniPosition: {
-      left: '50%',
-      position: 'absolute',
-    },
+  // Texto principal "Bem-vindo à MINI"
+  bemVindoAMini: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#3cb3f6', // Cor azul para destaque
+    textAlign: 'center',
+    marginBottom: 10,
+  },
 
-    bemVindoAMini: {
-      marginLeft: -30,
-      top: 395,
-      fontSize: 11,
-      fontFamily: FontFamily.poppinsRegular,
-      color: Color.colorGray,
-      left: '50%',
-      position: 'absolute',
-    },
+  // Subtítulo "Sua nova forma de fazer compras"
+  suaNovaForma: {
+    fontSize: 18,
+    color: '#555', // Cor de texto suave
+    textAlign: 'center',
+    marginBottom: 15,
+  },
 
-    suaNovaForma: {
-      marginLeft: -80,
-      top: 420,
-      fontSize: 13,
-      textAlign: 'center',
-      color: Color.colorGray,
-    },
+  // Texto do tutorial
+  sigaAquiCom: {
+    fontSize: 16,
+    color: '#3cb3f6',
+    textAlign: 'center',
+    width: '80%',
+    marginBottom: 20,
+  },
 
-    sigaAquiCom: {
-      marginLeft: -134,
-      top: 505,
-      fontSize: 15,
-      color: '#3cb3f6',
-      textAlign: 'center',
-      width: 264,
-    },
+  // Botão PRÓXIMO - Subido para uma posição intermediária no canto inferior direito
+  prximo: {
+    position: 'absolute',
+    bottom: 80, // Subido um pouco em relação ao fundo
+    right: 20,
+    backgroundColor: '#3cb3f6',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
 
-    prximo1: {
-      fontSize: 12,
-      width: 58,
-      height: 20,
-      fontFamily: FontFamily.poppinsRegular,
-      color: Color.colorGray,
-    },
-
-    prximo: {
-      left: 345,
-      top: 751,
-      position: 'absolute',
-    },
-
-    icon: {
-      height: '100%',
-      width: '100%',
-    },
-
-    crossblue: {
-      left: 375,
-      top: 23,
-      width: 30,
-      height: 30,
-      position: 'absolute',
-    },
-
-    logotipoPreto: {
-      marginLeft: -93,
-      top: 112,
-      width: 187,
-      height: 264,
-    },
-
-    welcome: {
-      backgroundColor: '#fff',
-      flex: 1,
-      height: 800,
-      overflow: 'hidden',
-      width: '100%',
-    },
-    
+  prximoTexto: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
 export default styles;
