@@ -1,45 +1,50 @@
-// TODO: estilizar e renomear este componente
 import * as React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity, Linking } from 'react-native';
 import { Image } from 'expo-image';
 import styles from '../../styles/ContactStyle';
 import { useRouter } from 'expo-router';
 
 const Contact = () => {
   const router = useRouter();
+
+  const openWhatsApp = () => {
+    const phoneNumber = '+5548988002368';
+    const url = `whatsapp://send?phone=${phoneNumber}`;
+    Linking.openURL(url).catch(() => {
+      alert('Não foi possível abrir o WhatsApp');
+    });
+  };
+
   return (
     <View style={styles.contact}>
-      <Pressable onPress={() => router.push('/(tabs)/home')}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.push('/(tabs)/home')}>
         <Image
           style={styles.contactItem}
           contentFit="cover"
           source={require('../../assets/vector-36.png')}
         />
-      </Pressable>
+      </TouchableOpacity>
 
       <Image
-        style={[styles.image14Icon, styles.image14IconPosition]}
+        style={styles.logotipoPretoSemFundo1}
         contentFit="cover"
-        source={require('../../assets/whatsappicon.png')}
+        source={require('../../assets/logopretosemfundo.png')}
       />
 
       <Text style={styles.algumProblemaOu}>Algum problema ou dúvida?</Text>
 
-      <Text style={[styles.cliqueNoConeContainer, styles.textTypo]}>
-        <Text style={styles.cliqueNo}>Clique no</Text>
-
-        <Text style={styles.coneTypo}>{` ícone `}</Text>
-
-        <Text style={styles.cliqueNo}>e entre em contato:</Text>
+      <Text style={styles.cliqueNoConeContainer}>
+        Clique no <Text style={styles.coneTypo}>ícone</Text> e entre em contato:
       </Text>
 
-      <Text style={[styles.text, styles.coneTypo]}>+55 (48) 98800-2368</Text>
-
-      <Image
-        style={[styles.logotipoPretoSemFundo1, styles.image14IconPosition]}
-        contentFit="cover"
-        source={require('../../assets/logopretosemfundo.png')}
-      />
+      <TouchableOpacity style={styles.whatsappContainer} onPress={openWhatsApp}>
+        <Image
+          style={styles.whatsappIcon}
+          contentFit="cover"
+          source={require('../../assets/whatsappicon.png')}
+        />
+        <Text style={styles.phoneNumber}>+55 (48) 98800-2368</Text>
+      </TouchableOpacity>
     </View>
   );
 };
