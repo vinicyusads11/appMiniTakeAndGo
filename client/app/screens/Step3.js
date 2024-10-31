@@ -1,56 +1,36 @@
 import * as React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { Image } from 'expo-image';
-import { Text, Pressable, View } from 'react-native';
 import styles from '../../styles/Step3Style';
 import { useRouter } from 'expo-router';
+import ProgressBar from '../../components/ProgressBar';
 
-const Step = () => {
+const Step3 = () => {
   const router = useRouter();
   return (
     <View style={styles.step3}>
-      <Image
-        style={[styles.step3Child, styles.step3Layout]}
-        contentFit="cover"
-        source={require('../../assets/ellipse-10.png')}
-      />
-      <Text style={[styles.text, styles.textTypo]}>3</Text>
-      <Image
-        style={[styles.step3Item, styles.step3Layout]}
-        contentFit="cover"
-        source={require('../../assets/ellipse-11.png')}
-      />
-      <Image
-        style={[styles.step3Inner, styles.step3Layout]}
-        contentFit="cover"
-        source={require('../../assets/ellipse-12.png')}
-      />
-      <Pressable style={styles.voltar} onPress={() => router.push('../screens/Step2')}>
-        <Text style={[styles.voltar1, styles.text1Clr]}>VOLTAR</Text>
-      </Pressable>
-      <Text style={[styles.umCdigoqrCode, styles.text1Position]}>
-        Um código Pix será gerado, você poderá escanear ou copiá-lo
+      <ProgressBar step={3} />
+
+      <Text style={styles.umCdigoqrCode}>
+        Um código Pix será gerado, você poderá escanear ou copiá-lo para pagar
       </Text>
-      <Text style={[styles.text1, styles.text1Layout]}>{` `}</Text>
-      <Text style={[styles.agoraS, styles.agoraSTypo]}>
-        Agora é só pagar, retirar seus produtos e pronto!
-      </Text>
-      <Pressable style={styles.button} onPress={() => router.push('/(tabs)/home')}>
-        <Text style={[styles.button1, styles.textTypo]}>Começar as compras!</Text>
-      </Pressable>
-      <View style={[styles.lineView, styles.lineViewLayout]} />
-      <View style={[styles.step3Child1, styles.lineViewLayout]} />
+
+      <TouchableOpacity style={styles.voltar} onPress={() => router.push('../screens/Step2')}>
+        <Text style={styles.voltarTexto}>VOLTAR</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.prximo} onPress={() => router.push('/(tabs)/home')}>
+        <Text style={styles.prximoTexto}>Ir as compras!</Text>
+      </TouchableOpacity>
+
       <Image
-        style={[styles.rectangleIcon, styles.text1Position]}
+        style={styles.cestaIcon}
         contentFit="cover"
         source={require('../../assets/cestacomprasicon.png')}
       />
-      <Image
-        style={[styles.groupIcon, styles.step3Layout]}
-        contentFit="cover"
-        source={require('../../assets/qrcodeicon.png')}
-      />
+      <Text style={styles.agoraS}>Aí é só pagar, pegar seus produtos e pronto!</Text>
     </View>
   );
 };
 
-export default Step;
+export default Step3;
