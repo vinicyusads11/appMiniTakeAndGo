@@ -1,53 +1,40 @@
-// TODO: estilizar e renomear este componente
 import * as React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Image } from 'expo-image';
 import styles from '@/styles/HomeStyle';
 import { useRouter } from 'expo-router';
 
 const Home = () => {
   const router = useRouter();
+
   return (
     <View style={styles.home}>
-      <Text style={[styles.desejaVerOContainer, styles.containerPosition]}>
-        <Text style={styles.desejaVerOTutoralDeCompra}>
-          <Text style={styles.desejaVerO}>Deseja ver o tutoral de compra novamente? </Text>
-        </Text>
-        <Pressable onPress={() => router.push('../screens/Step1')}>
-          <Text style={[styles.cliqueAqui, styles.cliqueAquiTypo]}>Clique aqui</Text>
-        </Pressable>
-      </Text>
-      <Text style={[styles.paraIniciarSuaContainer, styles.containerPosition]}>
-        <Text style={styles.desejaVerOTutoralDeCompra}>
-          <Text style={styles.desejaVerO}>Para iniciar sua compra, clique no ícone do</Text>
-        </Text>
-        <Text style={styles.cdigoDeBarras}>
-          <Text style={styles.cliqueAquiTypo}> código de barras </Text>
-        </Text>
-        <Text style={styles.abaixo}>abaixo</Text>
-      </Text>
-      <Pressable onPress={() => router.push('../screens/ScanBarCode')}>
-        <Image
-          style={[styles.homeChild, styles.homeChildPosition]}
-          contentFit="cover"
-          source={require('../../assets/ellipse-138.png')}
-        />
-      </Pressable>
       <Image
-        style={[styles.vectorIcon, styles.iconLayout]}
-        contentFit="cover"
-        source={require('../../assets/vector.png')}
-      />
-      <Image
-        style={[styles.groupIcon, styles.iconLayout]}
-        contentFit="cover"
-        source={require('../../assets/group.png')}
-      />
-      <Image
-        style={[styles.logotipopretosemfundoIcon, styles.homeChildPosition]}
+        style={styles.logotipopretosemfundoIcon}
         contentFit="cover"
         source={require('../../assets/logotipopretosemfundo.png')}
       />
+
+      <Text style={styles.iniciarTexto}>
+        Para iniciar sua compra, clique no ícone do
+        <Text style={styles.cdigoDeBarras}> CÓDIGO DE BARRAS </Text>
+        abaixo
+      </Text>
+
+      <TouchableOpacity
+        onPress={() => router.push('../screens/ScanBarCode')}
+        style={styles.barcodeButton}
+      >
+        <Icon name="barcode-scan" size={180} color="#3CB3F6" />
+      </TouchableOpacity>
+
+      <Text style={styles.tutorialTexto}>
+        Deseja ver o tutorial de compra novamente?
+        <TouchableOpacity onPress={() => router.push('../screens/Step1')}>
+          <Text style={styles.cliqueAqui}> Clique aqui</Text>
+        </TouchableOpacity>
+      </Text>
     </View>
   );
 };
