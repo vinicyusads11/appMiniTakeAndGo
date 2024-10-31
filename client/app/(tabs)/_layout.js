@@ -1,23 +1,33 @@
 import { Tabs } from 'expo-router';
-import { FontAwesome, SimpleLineIcons, AntDesign, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome, SimpleLineIcons, MaterialIcons } from '@expo/vector-icons';
 
 export default function Layout() {
   return (
     <Tabs
       screenOptions={{
-        headerStyle: {
+        headerShown: false,
+        tabBarStyle: {
           backgroundColor: '#121212',
+          height: 65,
+          paddingBottom: 10,
         },
-        headerTintColor: '#FFF',
-        headerTitleAlign: 'center',
+        tabBarLabelStyle: {
+          fontSize: 13,
+          color: '#FFF',
+        },
+        tabBarIconStyle: {
+          marginTop: 5,
+        },
+        tabBarActiveTintColor: '#3cb3f6',
+        tabBarInactiveTintColor: '#888',
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
           title: 'Início',
-          tabBarIcon: ({}) => {
-            return <FontAwesome name="home" color={'#3cb3f6'} size={30} />;
+          tabBarIcon: ({ color, size }) => {
+            return <FontAwesome name="home" color={color} size={32} />;
           },
         }}
       />
@@ -25,8 +35,8 @@ export default function Layout() {
         name="basket"
         options={{
           title: 'Cesta',
-          tabBarIcon: ({}) => {
-            return <SimpleLineIcons name="bag" color={'#3cb3f6'} size={25} />;
+          tabBarIcon: ({ color, size }) => {
+            return <SimpleLineIcons name="bag" color={color} size={27} />;
           },
         }}
       />
@@ -34,8 +44,8 @@ export default function Layout() {
         name="contact"
         options={{
           title: 'Contato',
-          tabBarIcon: ({}) => {
-            return <MaterialIcons name="support-agent" color={'#3cb3f6'} size={30} />;
+          tabBarIcon: ({ color, size }) => {
+            return <MaterialIcons name="support-agent" color={color} size={32} />;
           },
         }}
       />
