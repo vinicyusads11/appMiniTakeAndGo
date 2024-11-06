@@ -15,6 +15,10 @@ const Step2 = () => {
         Confira todos os produtos, confirme e finalize sua compra
       </Text>
 
+      <TouchableOpacity style={styles.skipButton} onPress={() => router.push('../(tabs)/home')}>
+        <Text style={styles.skipText}>Pular Tutorial</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.voltar} onPress={() => router.push('../screens/Step1')}>
         <Text style={styles.voltarTexto}>VOLTAR</Text>
       </TouchableOpacity>
