@@ -17,11 +17,22 @@ const styles = StyleSheet.create({
   },
 
   confiraTodosOs: {
-    fontSize: 18,
-    color: '#3cb3f6',
+    fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 30,
     width: '80%',
+  },
+
+  skipButton: {
+    position: 'absolute', 
+    top: 20,
+    right: 20,
+  },
+  
+  skipText: {
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 
   // Botão PRÓXIMO (à direita)

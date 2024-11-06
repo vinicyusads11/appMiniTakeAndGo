@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Color, FontFamily } from '../GlobalStyles';
+import { Color } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
   home: {
@@ -18,11 +18,12 @@ const styles = StyleSheet.create({
   },
   // Texto de instrução no meio
   iniciarTexto: {
-    fontSize: 18,
+    fontSize: 20,
     textAlign: 'center',
     paddingHorizontal: 20,
-    color: '#333',
-    fontFamily: FontFamily.poppinsRegular,
+    fontWeight: 'bold',
+    marginLeft:50,
+    marginRight:50,
   },
   cdigoDeBarras: {
     color: Color.colorDeepskyblue,
@@ -37,14 +38,12 @@ const styles = StyleSheet.create({
   tutorialTexto: {
     fontSize: 15,
     textAlign: 'center',
-    marginBottom: 30,
-    color: '#333',
-    fontFamily: FontFamily.poppinsRegular,
+    marginBottom: 50,
+    fontWeight: 'regular',
   },
   cliqueAqui: {
     color: Color.colorDeepskyblue,
-    fontFamily: FontFamily.poppinsBold,
-    textDecorationLine: 'underline',
+    fontWeight: 'bold',
     fontSize: 18,
   },
 });

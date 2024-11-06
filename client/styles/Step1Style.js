@@ -14,17 +14,33 @@ const styles = StyleSheet.create({
   // Texto de instrução principal
   aponteACmeraContainer: {
     textAlign: 'center',
-    fontSize: 18,
-    color: '#3cb3f6',
+    fontSize: 20,
+    fontWeight: 'bold',
     width: '80%',
     marginBottom: 30,
+  },
+  
+  codigoDeBarras: {
+    color: '#3cb3f6', 
+    fontWeight: 'bold', 
   },
 
   // Imagem de instrução principal
   girlscanqrcodeIcon: {
-    width: 250,
+    width: 350,
     height: 180,
     marginBottom: 40,
+  },
+
+  skipButton: {
+    position: 'absolute', 
+    top: 20,
+    right: 20,
+  },
+  
+  skipText: {
+    fontSize: 16, 
+    fontWeight: 'bold',
   },
 
   // Etapas de progresso
@@ -42,7 +58,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 
-  // Botão PRÓXIMO (à direita, seguindo o estilo de Welcome.js)
   prximo: {
     position: 'absolute',
     bottom: 80,
@@ -64,7 +79,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  // Botão VOLTAR (à esquerda, seguindo o mesmo estilo)
   voltar: {
     position: 'absolute',
     bottom: 80,

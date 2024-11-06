@@ -11,16 +11,16 @@ const styles = StyleSheet.create({
   },
 
   umCdigoqrCode: {
-    fontSize: 18,
-    color: '#3cb3f6',
+    fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'center',
     width: '80%',
     marginBottom: 20,
   },
 
   agoraS: {
-    fontSize: 16,
-    color: '#555',
+    fontSize: 18,
+    fontWeight: 'bold',
     textAlign: 'center',
     width: '80%',
     marginBottom: 40,

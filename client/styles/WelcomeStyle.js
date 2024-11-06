@@ -7,47 +7,57 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 50, // Adiciona espaçamento superior e inferior para evitar cortes
+    paddingVertical: 50, 
     paddingHorizontal: 20,
   },
 
-  // Logotipo - Removido marginTop para evitar cortes
   logotipoPreto: {
     width: 200,
     height: 280,
-    marginBottom: 40,
+    marginBottom: 20, 
   },
 
   // Texto principal "Bem-vindo à MINI"
   bemVindoAMini: {
-    fontSize: 24,
+    fontSize: 28, 
     fontWeight: 'bold',
-    color: '#3cb3f6', // Cor azul para destaque
+    color: '#3cb3f6',
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: 20, 
   },
 
   // Subtítulo "Sua nova forma de fazer compras"
   suaNovaForma: {
-    fontSize: 18,
-    color: '#555', // Cor de texto suave
+    fontSize: 20, 
     textAlign: 'center',
     marginBottom: 15,
   },
 
   // Texto do tutorial
   sigaAquiCom: {
-    fontSize: 16,
+    fontSize: 18, 
     color: '#3cb3f6',
+    fontWeight: 'bold',
     textAlign: 'center',
     width: '80%',
     marginBottom: 20,
   },
 
-  // Botão PRÓXIMO - Subido para uma posição intermediária no canto inferior direito
+  skipButton: {
+    position: 'absolute', 
+    top: 20,
+    right: 20,
+  },
+  
+  skipText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  // Botão PRÓXIMO
   prximo: {
     position: 'absolute',
-    bottom: 80, // Subido um pouco em relação ao fundo
+    bottom: 80,
     right: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,

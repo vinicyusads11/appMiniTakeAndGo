@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { Color, FontSize, FontFamily } from '../GlobalStyles';
+import { Color } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
   contact: {
     backgroundColor: Color.colorWhite,
     flex: 1,
-    justifyContent: 'space-evenly', // Distribuição uniforme
+    justifyContent: 'space-evenly', 
     alignItems: 'center',
     paddingVertical: 40,
   },
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
 
   algumProblemaOu: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: '700',
     color: Color.colorDarkslategray,
     textAlign: 'center',
@@ -37,11 +37,12 @@ const styles = StyleSheet.create({
   },
 
   cliqueNoConeContainer: {
-    fontSize: 16,
+    fontSize: 20,
     color: Color.colorDarkslategray,
     textAlign: 'center',
     paddingHorizontal: 20,
     marginVertical: 10,
+    fontWeight:'bold',
   },
   coneTypo: {
     color: Color.colorDeepskyblue,
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   phoneNumber: {
-    fontSize: 18,
+    fontSize: 20,
     color: Color.colorDeepskyblue,
     fontWeight: '600',
   },

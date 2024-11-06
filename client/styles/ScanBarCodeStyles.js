@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Color, FontSize, FontFamily, Border } from '../GlobalStyles';
+import { Color, FontSize, FontFamily } from '../GlobalStyles';
 
 const styles = StyleSheet.create({
     button1Typo: {
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     cameraContainer: {
       flex: 1,
       width: '100%',
-      height: 200, // Ajuste a altura conforme desejado
+      height: 200, 
       justifyContent: 'center',
       alignItems: 'center',
       marginVertical: 20,
