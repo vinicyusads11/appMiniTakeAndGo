@@ -34,7 +34,7 @@ const Contact = () => {
       <Text style={styles.algumProblemaOu}>Algum problema ou dúvida?</Text>
 
       <Text style={styles.cliqueNoConeContainer}>
-        Clique no <Text style={styles.coneTypo}>ícone</Text> e entre em contato:
+        Clique no <Text style={styles.coneTypo}>ícone</Text> abaixo e entre em contato:
       </Text>
 
       <TouchableOpacity style={styles.whatsappContainer} onPress={openWhatsApp}>
