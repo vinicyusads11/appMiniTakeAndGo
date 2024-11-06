@@ -12,13 +12,16 @@ const Step1 = () => {
       <ProgressBar step={1} />
 
       <Text style={styles.aponteACmeraContainer}>
-        <Text style={styles.aponteACmera}>{`Aponte a câmera do seu celular, escaneie o `}</Text>
-        <Text style={styles.cdigoDeBarras}>código de barras</Text>
         <Text style={styles.aponteACmera}>
-          {' '}
-          do produto e ele será adicionado automaticamente a cesta
+          Aponte a câmera do seu celular para o{' '}
+          <Text style={styles.codigoDeBarras}>código de barras</Text> do produto e ele será
+          adicionado automaticamente à cesta
         </Text>
       </Text>
+
+      <TouchableOpacity style={styles.skipButton} onPress={() => router.push('../(tabs)/home')}>
+        <Text style={styles.skipText}>Pular Tutorial</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.prximo} onPress={() => router.push('../screens/Step2')}>
         <Text style={styles.prximoTexto}>PRÓXIMO</Text>
