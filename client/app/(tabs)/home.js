@@ -17,7 +17,7 @@ const Home = () => {
       />
 
       <Text style={styles.iniciarTexto}>
-        Para iniciar sua compra, clique no ícone do
+        Para iniciar sua compra, clique no ícone de
         <Text style={styles.cdigoDeBarras}> CÓDIGO DE BARRAS </Text>
         abaixo
       </Text>
