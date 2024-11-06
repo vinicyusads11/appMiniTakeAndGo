@@ -20,7 +20,7 @@ const Step3 = () => {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.prximo} onPress={() => router.push('/(tabs)/home')}>
-        <Text style={styles.prximoTexto}>Ir as compras!</Text>
+        <Text style={styles.prximoTexto}>Ir às compras!</Text>
       </TouchableOpacity>
 
       <Image
@@ -28,7 +28,7 @@ const Step3 = () => {
         contentFit="cover"
         source={require('../../assets/cestacomprasicon.png')}
       />
-      <Text style={styles.agoraS}>Aí é só pagar, pegar seus produtos e pronto!</Text>
+      <Text style={styles.agoraS}>Aí é só pagar, levar seus produtos e pronto!</Text>
     </View>
   );
 };
