@@ -103,16 +103,7 @@ export default function ScanBarCode() {
         onBarcodeScanned={scanned ? undefined : handleBarcodeScanned}
         barcodeScannerSettings={{
           barcodeTypes: [
-            'qr',
             'ean13',
-            'ean8',
-            'upc_a',
-            'upc_e',
-            'code128',
-            'code39',
-            'code93',
-            'pdf417',
-            'itf14',
           ],
         }}
         style={StyleSheet.absoluteFillObject}
