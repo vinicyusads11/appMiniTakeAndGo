@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { CameraView, Camera } from 'expo-camera';
-import { Image } from 'expo-image';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import styles from '../../styles/ScanBarCodeStyles';
 
@@ -33,7 +32,7 @@ export default function ScanBarCode() {
     console.log('Código de barras escaneado:', data);
 
     try {
-      const response = await fetch('http://192.168.1.2:5000/product', {
+      const response = await fetch('http://192.168.1.8:5000/product', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ barcode: data }),
@@ -52,19 +51,16 @@ export default function ScanBarCode() {
             });
           }, 500);
         } else {
-          // Exibe a mensagem de erro por 5 segundos
           setToastMessage('Erro: Produto não encontrado no banco de dados.');
           setScanError(true);
           setTimeout(() => setToastMessage(null), 5000);
         }
       } else {
-        // Exibe a mensagem de erro por 5 segundos
         setToastMessage('Erro: Produto não encontrado.');
         setScanError(true);
         setTimeout(() => setToastMessage(null), 5000);
       }
     } catch (error) {
-      // Exibe a mensagem de erro por 5 segundos
       setToastMessage('Erro: Falha ao buscar produto.');
       setScanError(true);
       setTimeout(() => setToastMessage(null), 5000);
@@ -80,42 +76,28 @@ export default function ScanBarCode() {
 
   return (
     <View style={styles.scanbarcode}>
-      <TouchableOpacity onPress={() => router.push('/(tabs)/home')}>
-        <Image
-          style={styles.scanbarcodeChild}
-          contentFit="cover"
-          source={require('../../assets/vector-36.png')}
-        />
+      <Text style={localStyles.instructionText}>
+        Aponte a câmera do seu celular para o código de barras do produto que você deseja, e ele
+        será adicionado automaticamente à cesta
+      </Text>
+
+      <TouchableOpacity onPress={() => router.push('/(tabs)/home')} style={localStyles.backButton}>
+        <Text style={localStyles.backButtonText}>Voltar à Tela Inicial</Text>
       </TouchableOpacity>
-      <Text style={[styles.aponteParaOContainer, styles.button1Typo]}>
-        <Text style={styles.aponteParaO}>
-          <Text style={styles.aponteParaO1}>Aponte para o</Text>
-        </Text>
-        <Text style={styles.cdigoDeBarras}> código de barras </Text>
-        <Text style={styles.aponteParaO}>
-          <Text style={styles.aponteParaO1}>do produto</Text>
-        </Text>
-      </Text>
-      <Text style={[styles.restaurantName, styles.restaurantNamePosition]}>
-        Não leve os produtos sem pagar
-      </Text>
+
       <CameraView
         onBarcodeScanned={scanned ? undefined : handleBarcodeScanned}
         barcodeScannerSettings={{
-          barcodeTypes: [
-            'ean13',
-          ],
+          barcodeTypes: ['ean13'],
         }}
-        style={StyleSheet.absoluteFillObject}
+        style={localStyles.camera}
       />
+
       {toastMessage && (
         <View style={localStyles.toast}>
           <Text style={localStyles.toastText}>{toastMessage}</Text>
         </View>
       )}
-      <TouchableOpacity onPress={() => router.push('/(tabs)/home')} style={localStyles.backButton}>
-        <Text style={localStyles.backButtonText}>Voltar à Tela Inicial</Text>
-      </TouchableOpacity>
       {scanError && (
         <TouchableOpacity
           style={localStyles.retryButton}
@@ -136,6 +118,23 @@ const localStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
   },
+  instructionText: {
+    position: 'absolute',
+    top: 20,
+    left: 10,
+    right: 10,
+    fontSize: 16,
+    color: '#fff',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    padding: 10,
+    textAlign: 'center',
+    borderRadius: 8,
+    zIndex: 10,
+  },
+  camera: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 1,
+  },
   backButton: {
     position: 'absolute',
     bottom: 80,
@@ -150,6 +149,7 @@ const localStyles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 4,
+    zIndex: 10,
   },
   backButtonText: {
     fontSize: 18,
@@ -168,6 +168,7 @@ const localStyles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     opacity: 0.9,
+    zIndex: 10,
   },
   toastText: {
     color: 'white',
@@ -184,6 +185,7 @@ const localStyles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 8,
     elevation: 5,
+    zIndex: 10,
   },
   retryButtonText: {
     color: '#fff',
