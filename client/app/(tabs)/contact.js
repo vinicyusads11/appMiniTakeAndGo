@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Linking } from 'react-native';
 import { Image } from 'expo-image';
 import styles from '../../styles/ContactStyle';
 import { useRouter } from 'expo-router';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Contact = () => {
   const router = useRouter();
@@ -18,11 +19,7 @@ const Contact = () => {
   return (
     <View style={styles.contact}>
       <TouchableOpacity style={styles.backButton} onPress={() => router.push('/(tabs)/home')}>
-        <Image
-          style={styles.contactItem}
-          contentFit="cover"
-          source={require('../../assets/vector-36.png')}
-        />
+        <Icon name="arrow-left" size={50} color="#3CB3F6" />
       </TouchableOpacity>
 
       <Image
