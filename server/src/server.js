@@ -1,9 +1,8 @@
-require('dotenv').config(); // Carrega as variáveis de ambiente do .env
-
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const Product = require('../src/models/Product');
+import 'dotenv/config'; // Carrega as variáveis de ambiente do .env
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import Product from '../src/models/Product.js'; 
 
 const app = express();
 app.use(cors());
@@ -26,7 +25,6 @@ app.post('/product', async (req, res) => {
   console.log('Tipo do código de barras recebido:', typeof barcode);
 
   try {
-    // Convertendo explicitamente para string
     const product = await Product.findOne({ barcode: barcode.toString() });
     console.log('Produto encontrado com valor fixo:', product);
 
