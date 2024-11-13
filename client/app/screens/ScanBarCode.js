@@ -32,7 +32,7 @@ export default function ScanBarCode() {
     console.log('Código de barras escaneado:', data);
 
     try {
-      const response = await fetch('http://192.168.1.8:5000/product', {
+      const response = await fetch('http://192.168.1.2:5000/product', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ barcode: data }),
@@ -46,7 +46,7 @@ export default function ScanBarCode() {
 
           setTimeout(() => {
             router.push({
-              pathname: '../(tabs)/basket',
+              pathname: '/(tabs)/basket',
               params: { cart: JSON.stringify(updatedCart) },
             });
           }, 500);
