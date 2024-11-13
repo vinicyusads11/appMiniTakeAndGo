@@ -1,11 +1,9 @@
 require('dotenv').config(); // Carrega as variáveis de ambiente do .env
-console.log('MongoDB URI:', process.env.MONGODB_URI); // Deve exibir a URI do MongoDB
 
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Product = require('../src/models/Product');
-console.log('Modelo Product:', Product); // Deve exibir o modelo Product no console
 
 const app = express();
 app.use(cors());
@@ -13,10 +11,7 @@ app.use(express.json());
 
 // Conectar ao MongoDB Atlas usando a variável de ambiente
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Conectado ao MongoDB Atlas');
   })
