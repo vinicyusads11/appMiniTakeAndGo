@@ -1,47 +1,61 @@
-const express = require('express');
-require('dotenv').config(); // Carregar variáveis de ambiente no início
-const connectDB = require('./database/connection/db'); // Conexão com o banco de dados
+import express from 'express';
+import { Payment, MercadoPagoConfig } from 'mercadopago';
+import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
 
+// Configurar dotenv para carregar variáveis de ambiente
+dotenv.config();
+
+// Step 1: Configure MercadoPago Client
+const client = new MercadoPagoConfig({
+  accessToken: process.env.ACCESS_TOKEN, // Carrega o token do .env
+});
+
+const payment = new Payment(client);
+
+// Step 2: Create Express App
 const app = express();
+app.use(express.json()); // Middleware to parse JSON
 
-// Conecta ao banco de dados
-connectDB();
+// Step 3: Criar pagamento via PIX
+app.post('/criar-pix', async (req, res) => {
+  try {
+    const { transaction_amount, description, paymentMethodId} = req.body;
 
-// Middlewares para parsear o corpo das requisições
-app.use(express.json()); // Para parsear requisições com corpos em JSON
-app.use(express.urlencoded({ extended: true })); // Para parsear requisições com corpos em URL-encoded
+    // Validação básica
+    if (!transaction_amount || !description || !paymentMethodId) {
+      return res.status(400).send('Todos os campos são obrigatórios.');
+    }
 
-// Importação e uso das rotas
-const ProductRoutes = require('./routes/ProductRoutes');
-const UserRoutes = require('./routes/UserRoutes');
-const BagItemRoutes = require('./routes/BagItemRoutes');
-const BagRoutes = require('./routes/BagRoutes');
-const BranchRoutes = require('./routes/BranchRoutes');
-const OrderItemRoutes = require('./routes/OrderItemRoutes');
-const OrderRoutes = require('./routes/OrderRoutes');
-const StockRoutes = require('./routes/StockRoutes');
+    const idempotencyKey = uuidv4();
 
-app.use('/api/products', ProductRoutes);
-app.use('/api/users', UserRoutes);
-app.use('/api/bagItem', BagItemRoutes);
-app.use('/api/bag', BagRoutes);
-app.use('/api/branch', BranchRoutes);
-app.use('/api/orderItem', OrderItemRoutes);
-app.use('/api/order', OrderRoutes);
-app.use('/api/stock', StockRoutes);
+    // Criar pagamento
+    const result = await payment.create({
+      body: {
+        transaction_amount: parseFloat(transaction_amount),
+        description,
+        payment_method_id: paymentMethodId,
+        payer: {
+          email: 'cliente@example.com', 
+        },
+      },
+      requestOptions: { idempotencyKey },
+    });
 
-// Middleware para capturar 404 - Not Found
-app.use((req, res, next) => {
-    res.status(404).send("Desculpa, não conseguimos achar o que procura!");
+    console.log('Pagamento criado com sucesso:', result);
+    res.status(200).json(result);
+  } catch (error) {
+    console.error('Erro ao criar pagamento:', error);
+    res.status(500).json({
+      message: 'Erro ao criar pagamento',
+      error: error.message,
+      details: error,
+    });
+  }
 });
 
-// Middleware de tratamento de erro genérico
-app.use((err, req, res, next) => {
-    console.error(err.stack); // Loga o erro no console do servidor
-    res.status(500).send('Algo está errado!');
+// Inicia o servidor
+const PORT = 3000; 
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
-
-module.exports = app;
