@@ -1,58 +1,127 @@
-import * as React from 'react';
-import { Text, View } from 'react-native';
-import { Image } from 'expo-image';
-import styles from '../../styles/PaymentStyle';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Clipboard, Alert } from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 
-const Payment = () => {
+export default function Payment() {
+  const router = useRouter();
+  const { qrCode, pixCode } = useLocalSearchParams();
+
+  const copyToClipboard = () => {
+    Clipboard.setString(pixCode);
+    Alert.alert('Código Pix Copiado!', 'Você pode colar no aplicativo do banco para realizar o pagamento.');
+  };
+
   return (
-    <View style={styles.payment}>
-      <Text style={styles.brgovbcbpix256}>02020303012923013br.gov.bcb.pix256..</Text>
-      <Text style={[styles.instruesParaFinalizarAContainer, styles.copiarCdigoPixPosition]}>
-        <Text style={[styles.instrues, styles.r5318Typo]}>Instruções:</Text>
-        <Text style={styles.paraFinalizarACompraCopie}>
-          <Text style={styles.blankLine}> </Text>
-          <Text
-            style={styles.paraFinalizarA}
-          >{`Para finalizar a compra, copie e cole o código abaixo no seu aplicativo de pagamento de sua preferência. Após isso, sua compra será aprovada em instantes. `}</Text>
-        </Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>Pagamento via Pix</Text>
+      <Text style={styles.description}>
+      Instruções: Para finalizar a compra, leia o QRCODE acima ou copie e cole o código abaixo no seu aplicativo de pagamento de sua preferência. Após isso, sua compra será aprovada em instantes. 
       </Text>
-      <View style={[styles.paymentChild, styles.buttonPosition]} />
-      <View style={[styles.paymentItem, styles.paymentBorder]} />
-      <Image
-        style={styles.paymentInner}
-        contentFit="cover"
-        source={require('../../assets/vector-36.png')}
-      />
-      <Text style={[styles.pagamento, styles.r5318Typo]}>Pagamento</Text>
-      <Text style={[styles.total, styles.totalFlexBox]}>Total</Text>
-      <Text style={[styles.pagueAt, styles.s1630Position]}>Pague até</Text>
-      <Text style={[styles.pixCopiaE, styles.button1Typo]}>Pix Copia e Cola</Text>
-      <Text style={[styles.restaurantName, styles.totalFlexBox]}>Código Pix Copia e Cola</Text>
-      <View style={[styles.button, styles.buttonPosition]}>
-        <Text style={[styles.button1, styles.button1Typo]}>Pagar</Text>
-      </View>
-      <Text style={[styles.copiarCdigoPix, styles.copiarCdigoPixPosition]}>Copiar código PIX</Text>
-      <Image
-        style={styles.copyLeftIcon}
-        contentFit="cover"
-        source={require('../../assets/copyleft.png')}
-      />
-      <Text style={[styles.r5318, styles.totalFlexBox]}>R$ 53,18</Text>
-      <Text style={[styles.s1630, styles.s1630Position]}>01/05 ás 16:30</Text>
-      <View style={[styles.groupParent, styles.groupLayout]}>
+
+      {/* Exibe o QR Code */}
+      {qrCode ? (
         <Image
-          style={[styles.groupChild, styles.groupLayout]}
-          contentFit="cover"
-          source={require('../../assets/group-39.png')}
+          source={{ uri: `data:image/png;base64,${qrCode}` }}
+          style={styles.qrCode}
         />
-        <Image
-          style={styles.image49Icon}
-          contentFit="cover"
-          source={require('../../assets/image-49.png')}
-        />
-      </View>
+      ) : (
+        <Text style={styles.errorMessage}>QR Code não disponível.</Text>
+      )}
+
+      {/* Código Pix "Copia e Cola" */}
+      {pixCode ? (
+        <View style={styles.pixCodeContainer}>
+          <Text style={styles.pixCodeLabel}>Código Pix:</Text>
+          <Text style={styles.pixCode}>{pixCode}</Text>
+          <TouchableOpacity style={styles.copyButton} onPress={copyToClipboard}>
+            <Text style={styles.copyButtonText}>Copiar Código</Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <Text style={styles.errorMessage}>Código Pix não disponível.</Text>
+      )}
+
+      {/* Botão para voltar */}
+      <TouchableOpacity style={styles.backButton} onPress={() => router.push('/(tabs)/home')}>
+        <Text style={styles.backButtonText}>Voltar à Tela Inicial</Text>
+      </TouchableOpacity>
     </View>
   );
-};
+}
 
-export default Payment;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header: {
+    fontSize: 35,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+    color: '#333',
+  },
+  description: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 20,
+    color: '#555',
+  },
+  qrCode: {
+    width: 300,
+    height: 300,
+    marginBottom: 20,
+  },
+  errorMessage: {
+    fontSize: 16,
+    color: 'red',
+    marginBottom: 20,
+  },
+  pixCodeContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  pixCodeLabel: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: '#333',
+  },
+  pixCode: {
+    fontSize: 16,
+    color: '#555',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  copyButton: {
+    backgroundColor: '#3CB3F6',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    elevation: 3,
+  },
+  copyButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  backButton: {
+    backgroundColor: '#3CB3F6',
+    position: 'absolute', // Torna o botão absoluto na tela
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 8,
+    elevation: 3,
+    bottom: 30,     
+  },
+  backButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
