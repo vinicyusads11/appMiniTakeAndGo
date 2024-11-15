@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -40,11 +40,36 @@ export default function Basket() {
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
 
-  const handleConfirmPurchase = () => {
-    router.push({
-      pathname: '/screens/Payment',
-      params: { total },
-    });
+  const handleConfirmPurchase = async () => {
+    try {
+      const response = await fetch('http://192.168.1.2:3000/criar-pix', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          transaction_amount: parseFloat(total),
+          description: 'Compra no MiniTakeAndGo',
+          paymentMethodId: 'pix',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao criar pagamento');
+      }
+
+      const paymentData = await response.json();
+
+      // Redireciona para a tela de pagamento com os dados do Pix
+      router.push({
+        pathname: '/screens/Payment',
+        params: {
+          qrCode: paymentData.point_of_interaction.transaction_data.qr_code_base64,
+          pixCode: paymentData.point_of_interaction.transaction_data.qr_code,
+        },
+      });
+    } catch (error) {
+      console.error('Erro ao processar pagamento:', error);
+      Alert.alert('Erro', 'Não foi possível processar o pagamento. Tente novamente.');
+    }
   };
 
   if (cartItems.length === 0) {
