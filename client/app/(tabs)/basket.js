@@ -64,6 +64,9 @@ export default function Basket() {
         params: {
           qrCode: paymentData.point_of_interaction.transaction_data.qr_code_base64,
           pixCode: paymentData.point_of_interaction.transaction_data.qr_code,
+          id: paymentData.id, 
+          total,
+          cartItems: JSON.stringify(cartItems),
         },
       });
     } catch (error) {
@@ -77,7 +80,8 @@ export default function Basket() {
       <View style={styles.emptyCartContainer}>
         <Text style={styles.emptyCartMessage}>A sua cesta de compras está vazia!</Text>
         <Text style={styles.emptyCartInstruction}>
-          Clique no ícone de <Text style={styles.codigoDeBarras}>CÓDIGO DE BARRAS</Text> abaixo para escanear seus produtos e adicioná-los à cesta
+          Clique no ícone de <Text style={styles.codigoDeBarras}>CÓDIGO DE BARRAS</Text> abaixo para
+          escanear seus produtos e adicioná-los à cesta
         </Text>
         <TouchableOpacity
           onPress={() => router.push('/screens/ScanBarCode')}
@@ -271,12 +275,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginBottom: 20,
-    marginLeft:50,
-    marginRight:50,
+    marginLeft: 50,
+    marginRight: 50,
   },
   codigoDeBarras: {
-    color: '#3cb3f6', 
-    fontWeight: 'bold', 
+    color: '#3cb3f6',
+    fontWeight: 'bold',
   },
   barcodeButton: {
     marginTop: 230,
