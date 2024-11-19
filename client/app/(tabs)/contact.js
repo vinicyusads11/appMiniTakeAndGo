@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
-import styles from '../../styles/ContactStyle';
 import { useRouter } from 'expo-router';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -45,5 +44,69 @@ const Contact = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  contact: {
+    backgroundColor: '#FFFFFF',
+    flex: 1,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    paddingVertical: 40,
+  },
+
+  // Botão de voltar
+  backButton: {
+    position: 'absolute',
+    top: 30,
+    left: 20,
+    padding: 10,
+  },
+  contactItem: {
+    width: 24,
+    height: 35,
+  },
+
+  // Logotipo
+  logotipoPretoSemFundo1: {
+    width: 150,
+    height: 215,
+  },
+
+  algumProblemaOu: {
+    fontSize: 30,
+    fontWeight: '700',
+    color: '#2F4F4F', // cor equivalente a Color.colorDarkslategray
+    textAlign: 'center',
+    marginVertical: 10,
+  },
+
+  cliqueNoConeContainer: {
+    fontSize: 20,
+    color: '#2F4F4F', // cor equivalente a Color.colorDarkslategray
+    textAlign: 'center',
+    paddingHorizontal: 20,
+    marginVertical: 10,
+    fontWeight: 'bold',
+  },
+  coneTypo: {
+    color: '#00BFFF', // cor equivalente a Color.colorDeepskyblue
+    fontWeight: '700',
+  },
+
+  // Ícone e número do WhatsApp
+  whatsappContainer: {
+    alignItems: 'center',
+  },
+  whatsappIcon: {
+    width: 50,
+    height: 50,
+    marginBottom: 10,
+  },
+  phoneNumber: {
+    fontSize: 20,
+    color: '#00BFFF', // cor equivalente a Color.colorDeepskyblue
+    fontWeight: '600',
+  },
+});
 
 export default Contact;

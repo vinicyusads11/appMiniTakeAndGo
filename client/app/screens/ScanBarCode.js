@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { CameraView, Camera } from 'expo-camera';
 import { useRouter, useLocalSearchParams } from 'expo-router';
-import styles from '../../styles/ScanBarCodeStyles';
 
 export default function ScanBarCode() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -76,13 +75,13 @@ export default function ScanBarCode() {
 
   return (
     <View style={styles.scanbarcode}>
-      <Text style={localStyles.instructionText}>
+      <Text style={styles.instructionText}>
         Aponte a câmera do seu celular para o código de barras do produto que você deseja, e ele
         será adicionado automaticamente à cesta
       </Text>
 
-      <TouchableOpacity onPress={() => router.push('/(tabs)/home')} style={localStyles.backButton}>
-        <Text style={localStyles.backButtonText}>Voltar à Tela Inicial</Text>
+      <TouchableOpacity onPress={() => router.push('/(tabs)/home')} style={styles.backButton}>
+        <Text style={styles.backButtonText}>Voltar à Tela Inicial</Text>
       </TouchableOpacity>
 
       <CameraView
@@ -90,30 +89,30 @@ export default function ScanBarCode() {
         barcodeScannerSettings={{
           barcodeTypes: ['ean13'],
         }}
-        style={localStyles.camera}
+        style={styles.camera}
       />
 
       {toastMessage && (
-        <View style={localStyles.toast}>
-          <Text style={localStyles.toastText}>{toastMessage}</Text>
+        <View style={styles.toast}>
+          <Text style={styles.toastText}>{toastMessage}</Text>
         </View>
       )}
       {scanError && (
         <TouchableOpacity
-          style={localStyles.retryButton}
+          style={styles.retryButton}
           onPress={() => {
             setScanned(false);
             setScanError(false);
           }}
         >
-          <Text style={localStyles.retryButtonText}>CLIQUE AQUI PARA ESCANEAR NOVAMENTE</Text>
+          <Text style={styles.retryButtonText}>CLIQUE AQUI PARA ESCANEAR NOVAMENTE</Text>
         </TouchableOpacity>
       )}
     </View>
   );
 }
 
-const localStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   scanbarcode: {
     flex: 1,
     justifyContent: 'space-between',
