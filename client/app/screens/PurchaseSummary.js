@@ -4,25 +4,32 @@ import { useLocalSearchParams } from 'expo-router';
 
 export default function PurchaseSummary() {
   const { cartItems, total } = useLocalSearchParams();
-  const items = cartItems ? JSON.parse(cartItems) : []; // Verifica se cartItems está definido
+  const items = cartItems ? JSON.parse(cartItems) : []; // Decodifica os itens do carrinho
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Aqui estão todos os produtos que você acabou de comprar!</Text>
+      <Text style={styles.header}>
+        🎉 Aqui estão os produtos que você acabou de comprar! Obrigado por escolher a MiniTakeAndGo! 🛒
+      </Text>
 
       {items.length > 0 ? (
         <FlatList
           data={items}
-          keyExtractor={(item, index) => (item.id ? item.id.toString() : index.toString())} // Garante que um id sempre será usado
+          keyExtractor={(item, index) =>
+            item.id ? item.id.toString() : index.toString() // Garante uma chave válida
+          }
           renderItem={({ item }) => (
             <View style={styles.itemContainer}>
               <Image
-                source={{ uri: item.image_url || 'https://via.placeholder.com/50' }} // Imagem padrão se não houver imagem
+                source={{ uri: item.image_url || 'https://via.placeholder.com/50' }} // Imagem padrão se ausente
                 style={styles.image}
               />
               <View style={styles.info}>
                 <Text style={styles.name}>{item.name || 'Produto sem nome'}</Text>
-                <Text style={styles.quantity}>Quantidade: {item.quantity || 1}</Text>
+                <Text style={styles.price}>
+                  Valor unitário: <Text style={styles.priceValue}>R$ {item.price ? item.price.toFixed(2) : '0.00'}</Text>
+                </Text>
+                <Text style={styles.quantity}>Quantidade: {item.quantity ? item.quantity : 1}</Text>
               </View>
             </View>
           )}
@@ -31,7 +38,10 @@ export default function PurchaseSummary() {
         <Text style={styles.emptyMessage}>Nenhum item encontrado no resumo da compra.</Text>
       )}
 
-      <Text style={styles.total}>Valor Total: R$ {total || '0.00'}</Text>
+      <View style={styles.totalContainer}>
+        <Text style={styles.totalLabel}>💰 Valor total:</Text>
+        <Text style={styles.totalValue}>R$ {total || '0.00'}</Text>
+      </View>
     </View>
   );
 }
@@ -40,26 +50,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#FFF',
+    backgroundColor: '#F8F9FA',
   },
   header: {
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center',
     marginBottom: 20,
+    textAlign: 'center',
+    color: '#333',
+    backgroundColor: '#D1E7DD',
+    padding: 15,
+    borderRadius: 8,
   },
   itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
-    borderBottomWidth: 1,
-    borderColor: '#ddd',
-    paddingBottom: 10,
+    marginBottom: 15,
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   image: {
-    width: 50,
-    height: 50,
-    marginRight: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+    marginRight: 15,
   },
   info: {
     flex: 1,
@@ -67,19 +87,53 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 5,
+  },
+  price: {
+    fontSize: 14,
+    color: '#666',
+  },
+  priceValue: {
+    fontWeight: 'bold',
+    color: '#4CAF50',
   },
   quantity: {
     fontSize: 14,
+    color: '#555',
+    marginTop: 5,
   },
-  total: {
+  totalContainer: {
+    marginTop: 30,
+    backgroundColor: '#FFF',
+    padding: 15,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  totalLabel: {
     fontSize: 18,
     fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 20,
+    color: '#333',
+  },
+  totalValue: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#4CAF50',
   },
   emptyMessage: {
     fontSize: 16,
-    textAlign: 'center',
     color: '#666',
+    textAlign: 'center',
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#FFEFEF',
+    borderRadius: 8,
   },
 });
