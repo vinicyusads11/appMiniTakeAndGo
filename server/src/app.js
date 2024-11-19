@@ -54,6 +54,36 @@ app.post('/criar-pix', async (req, res) => {
   }
 });
 
+// Consulta o status do pagamento pelo ID
+app.get('/consultar-pagamento/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const response = await fetch(`https://api.mercadopago.com/v1/payments/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.ACCESS_TOKEN}`, // Certifique-se de que o token está correto
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Erro ao consultar pagamento');
+    }
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error('Erro ao consultar pagamento:', error);
+    res.status(500).json({
+      message: 'Erro ao consultar pagamento',
+      error: error.message,
+    });
+  }
+});
+
+
 // Inicia o servidor
 const PORT = 3000; 
 app.listen(PORT, '0.0.0.0', () => {
