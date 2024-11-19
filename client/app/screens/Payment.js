@@ -1,21 +1,64 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, ActivityIndicator } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { faPix } from '@fortawesome/free-brands-svg-icons';
 import * as Clipboard from 'expo-clipboard';
 
-
 export default function Payment() {
   const router = useRouter();
-  const { qrCode, pixCode, total } = useLocalSearchParams();
+  const { qrCode, pixCode, total, cartItems, id } = useLocalSearchParams();
+  const [checkingPayment, setCheckingPayment] = useState(false);
 
   const copyToClipboard = () => {
     Clipboard.setStringAsync(pixCode);
     Alert.alert('Código Pix Copiado!', 'Você pode colar no aplicativo do banco para realizar o pagamento.');
+    setCheckingPayment(true); // Começa a verificar o pagamento
   };
-  
+
+  // Função para verificar o status do pagamento
+  const checkPaymentStatus = async () => {
+    try {
+      const response = await fetch(`http://192.168.1.2:3000/consultar-pagamento/${id}`);
+      const data = await response.json();
+
+      if (data.status === 'approved') {
+        setCheckingPayment(false);
+        router.push({
+          pathname: '/screens/PurchaseSummary',
+          params: { cartItems: JSON.stringify(cartItems), total },
+        });
+      } else if (data.status === 'pending') {
+        setTimeout(checkPaymentStatus, 5000); // Verifica novamente após 5 segundos
+      } else {
+        Alert.alert('Pagamento não aprovado!', 'Verifique seu pagamento e tente novamente.');
+        setCheckingPayment(false);
+      }
+    } catch (error) {
+      console.error('Erro ao verificar pagamento:', error);
+      Alert.alert('Erro!', 'Não foi possível verificar o status do pagamento. Tente novamente.');
+      setCheckingPayment(false);
+    }
+  };
+
+  useEffect(() => {
+    if (checkingPayment) {
+      checkPaymentStatus();
+    }
+  }, [checkingPayment]);
+
+  if (checkingPayment) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.header}>Verificando status do pagamento...</Text>
+        <ActivityIndicator size="large" color="#4DB6AC" />
+        <Text style={styles.instructions}>
+          Assim que fizer o pagamento, sua compra será aprovada em instantes!
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -43,7 +86,7 @@ export default function Payment() {
 
         <Text style={styles.instructions}>
           <Text style={styles.instructionsTitle}>Instruções: </Text>
-          Para finalizar a compra, leia o QRCODE acima ou copie e cole o código abaixo no seu aplicativo de pagamento de sua preferência. Após isso, sua compra será aprovada em instantes.
+          Para finalizar a compra, leia o QRCODE acima ou copie e cole o código abaixo no seu aplicativo de pagamento de sua preferência.
         </Text>
 
         {pixCode ? (
@@ -61,10 +104,6 @@ export default function Payment() {
           <Text style={styles.errorMessage}>Código Pix não disponível.</Text>
         )}
       </View>
-
-      <TouchableOpacity style={styles.backButton} onPress={() => router.push('/(tabs)/home')}>
-        <Text style={styles.backButtonText}>Voltar à Tela Inicial</Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -170,19 +209,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginRight: 5,
-  },
-  backButton: {
-    backgroundColor: '#3CB3F6',
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 8,
-    elevation: 3,
-    marginBottom: 30,
-  },
-  backButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });
