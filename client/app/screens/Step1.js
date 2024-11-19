@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
-import styles from '../../styles/Step1Style';
 import { useRouter } from 'expo-router';
 import ProgressBar from '../../components/ProgressBar';
 
@@ -39,5 +38,91 @@ const Step1 = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  // Contêiner da tela
+  step1: {
+    backgroundColor: '#fff',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 50,
+    paddingHorizontal: 20,
+  },
+
+  // Texto de instrução principal
+  aponteACmeraContainer: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    width: '80%',
+    marginBottom: 30,
+  },
+
+  codigoDeBarras: {
+    color: '#3cb3f6',
+    fontWeight: 'bold',
+  },
+
+  // Imagem de instrução principal
+  girlscanqrcodeIcon: {
+    width: 350,
+    height: 180,
+    marginBottom: 40,
+  },
+
+  skipButton: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+  },
+
+  skipText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  prximo: {
+    position: 'absolute',
+    bottom: 80,
+    right: 20,
+    backgroundColor: '#3cb3f6',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  prximoTexto: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  voltar: {
+    position: 'absolute',
+    bottom: 80,
+    left: 20,
+    backgroundColor: '#3cb3f6',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  voltarTexto: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
 
 export default Step1;
