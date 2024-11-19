@@ -102,23 +102,24 @@ export default function Basket() {
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
             <Image source={{ uri: item.image_url }} style={styles.itemImage} />
-            <Text style={styles.item}>
-              {item.name} - R$ {item.price.toFixed(2)}
-            </Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.itemName}>{item.name}</Text>
+              <Text style={styles.itemPrice}>R$ {item.price.toFixed(2)}</Text>
+            </View>
             <View style={styles.buttonsContainer}>
-              <TouchableOpacity onPress={() => decreaseQuantity(item.id)}>
-                <Icon name="minus-circle-outline" size={30} color="#3CB3F6" />
-              </TouchableOpacity>
-              <Text style={styles.quantityText}>{item.quantity}</Text>
+              <Text style={styles.quantityLabel}>Quantidade</Text>
               <TouchableOpacity onPress={() => increaseQuantity(item.id)}>
                 <Icon name="plus-circle-outline" size={30} color="#3CB3F6" />
+              </TouchableOpacity>
+              <Text style={styles.quantityText}>{item.quantity}</Text>
+              <TouchableOpacity onPress={() => decreaseQuantity(item.id)}>
+                <Icon name="minus-circle-outline" size={30} color="#3CB3F6" />
               </TouchableOpacity>
             </View>
           </View>
         )}
       />
 
-      {/* Botões de Esvaziar e Escanear */}
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.emptyCartButton} onPress={emptyCart}>
           <Text style={styles.emptyCartButtonText}>Esvaziar Cesta</Text>
@@ -128,7 +129,6 @@ export default function Basket() {
         </TouchableOpacity>
       </View>
 
-      {/* Seção de Forma de Pagamento e Valor Total */}
       <View style={styles.paymentContainer}>
         <Text style={styles.paymentText}>Forma de Pagamento:</Text>
         <View style={styles.paymentMethodContainer}>
@@ -152,47 +152,81 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8F9FA',
   },
-  header: { fontSize: 30, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
-  itemContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  itemImage: {
-    width: 50,
-    height: 50,
-    marginRight: 10,
-    borderRadius: 5,
-  },
-  item: { fontSize: 18, flex: 1 },
-  buttonsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    width: 120,
-  },
-  quantityText: {
-    fontSize: 20,
+  header: {
+    fontSize: 26,
     fontWeight: 'bold',
+    marginBottom: 20,
     textAlign: 'center',
     color: '#333',
-    marginHorizontal: 10,
+    backgroundColor: '#C5E3F3',
+    padding: 10,
+    borderRadius: 8,
   },
-
-  // Estilos de pagamento e valor total
-  paymentContainer: {
-    marginTop: 30,
+  itemContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 10,
+    marginBottom: 15,
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  itemImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+    marginRight: 10,
+  },
+  infoContainer: {
+    flex: 1,
+  },
+  itemName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  itemPrice: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#000',
+    marginTop: 14,
+  },
+  buttonsContainer: {
+    alignItems: 'center',
+  },
+  quantityLabel: {
+    fontSize: 14,
+    color: '#555',
     marginBottom: 5,
   },
-  paymentText: {
+  quantityText: {
     fontSize: 18,
+    fontWeight: 'bold',
+    color: '#555',
+    marginVertical: 5,
+  },
+  paymentContainer: {
+    marginTop: 30,
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    padding: 14,
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  paymentText: {
+    fontSize: 16,
+    fontWeight: 'bold',
     color: '#333',
   },
   paymentMethodContainer: {
@@ -200,89 +234,112 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   paymentMethod: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginRight: 5,
+    color: '#4DB6AC',
   },
   pixIcon: {
     marginLeft: 5,
   },
-
   totalContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 10,
-    marginBottom: 20,
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   totalLabel: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#333',
   },
   totalAmount: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#4CAF50',
   },
-
   buttonRow: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     marginTop: 20,
   },
   emptyCartButton: {
-    backgroundColor: 'red',
-    padding: 10,
+    backgroundColor: '#DC3545',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
     borderRadius: 8,
-    width: '45%',
+    width: '48%',
     alignItems: 'center',
   },
-  emptyCartButtonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },
+  emptyCartButtonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   scanButton: {
-    backgroundColor: 'green',
-    padding: 10,
+    backgroundColor: '#28A745',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
     borderRadius: 8,
-    width: '45%',
+    width: '48%',
     alignItems: 'center',
   },
-  scanButtonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },
+  scanButtonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   confirmButton: {
-    backgroundColor: '#3cb3f6',
-    padding: 15,
+    backgroundColor: '#0D6EFD',
+    paddingVertical: 15,
+    paddingHorizontal: 20,
     borderRadius: 8,
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
-  confirmButtonText: { color: 'white', fontSize: 18, fontWeight: 'bold' },
-
-  // Estilos para o estado de carrinho vazio
+  confirmButtonText: {
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
   emptyCartContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F8F9FA',
   },
   emptyCartMessage: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
+    color: '#333',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 15,
   },
   emptyCartInstruction: {
     fontSize: 16,
+    color: '#666',
     textAlign: 'center',
-    fontWeight: 'bold',
     marginBottom: 20,
-    marginLeft: 50,
-    marginRight: 50,
   },
   codigoDeBarras: {
-    color: '#3cb3f6',
+    color: '#0D6EFD',
     fontWeight: 'bold',
   },
   barcodeButton: {
-    marginTop: 230,
+    marginTop: 30,
   },
 });
+
