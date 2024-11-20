@@ -18,7 +18,7 @@ const Home = () => {
       <Text style={styles.iniciarTexto}>
         Para iniciar sua compra, clique no ícone de
         <Text style={styles.cdigoDeBarras}> CÓDIGO DE BARRAS </Text>
-        abaixo
+        abaixo para escanear seus produtos e adicioná-los à cesta
       </Text>
 
       <TouchableOpacity
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     marginRight: 50,
   },
   cdigoDeBarras: {
-    color: '#00BFFF', // cor equivalente a Color.colorDeepskyblue
+    color: '#00BFFF',
     fontWeight: '700',
   },
   // Botão do código de barras logo abaixo do texto de instrução
@@ -76,10 +76,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     marginBottom: 50,
-    fontWeight: '400', // Regular weight
+    fontWeight: '400',
   },
   cliqueAqui: {
-    color: '#00BFFF', // cor equivalente a Color.colorDeepskyblue
+    color: '#00BFFF',
     fontWeight: 'bold',
     fontSize: 18,
   },

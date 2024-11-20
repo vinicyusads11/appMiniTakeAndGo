@@ -11,7 +11,7 @@ const Step2 = () => {
       <ProgressBar step={2} />
 
       <Text style={styles.confiraTodosOs}>
-        Confira todos os produtos, confirme e finalize sua compra
+        Confira todos os produtos adicionados, e confirme sua compra.
       </Text>
 
       <TouchableOpacity style={styles.skipButton} onPress={() => router.push('../(tabs)/home')}>
@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
   },
 
   confiraTodosOs: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 18,
     textAlign: 'center',
-    marginBottom: 30,
+    color: '#fffffff',
     width: '80%',
+    marginBottom: 30,
   },
 
   skipButton: {
@@ -70,10 +70,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  // Botão PRÓXIMO (à direita)
   prximo: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 50,
     right: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,
@@ -81,21 +80,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
   },
+
   prximoTexto: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
   },
 
-  // Botão VOLTAR (à esquerda)
   voltar: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 50,
     left: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,
@@ -103,12 +102,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
   },
   voltarTexto: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',

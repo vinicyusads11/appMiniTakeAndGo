@@ -335,11 +335,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   codigoDeBarras: {
-    color: '#0D6EFD',
+    color: '#3CB3F6',
     fontWeight: 'bold',
   },
   barcodeButton: {
-    marginTop: 30,
+    marginTop: 270,
   },
 });
 

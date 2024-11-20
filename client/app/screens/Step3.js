@@ -11,7 +11,7 @@ const Step3 = () => {
       <ProgressBar step={3} />
 
       <Text style={styles.umCdigoqrCode}>
-        Um código Pix será gerado, você poderá escanear ou copiá-lo para pagar
+        Ao confirmar sua compra, um código Pix será gerado, você poderá escanear ou copiá-lo para pagar
       </Text>
 
       <Image
@@ -21,15 +21,15 @@ const Step3 = () => {
       />
 
       <Text style={styles.agoraS}>
-        Aí é só pagar, levar seus produtos e pronto!
+        Aí é só pagar, levar seus produtos e aproveitar!
       </Text>
-
-      <TouchableOpacity style={styles.voltar} onPress={() => router.push('../screens/Step2')}>
-        <Text style={styles.voltarTexto}>VOLTAR</Text>
-      </TouchableOpacity>
 
       <TouchableOpacity style={styles.prximo} onPress={() => router.push('/(tabs)/home')}>
         <Text style={styles.prximoTexto}>Ir às compras!</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.voltar} onPress={() => router.push('../screens/Step2')}>
+        <Text style={styles.voltarTexto}>VOLTAR</Text>
       </TouchableOpacity>
     </View>
   );
@@ -43,46 +43,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 50,
     paddingHorizontal: 20,
+    marginTop: 135,
   },
 
   umCdigoqrCode: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 18,
     textAlign: 'center',
-    marginBottom: 30,
+    color: '#fffffff',
     width: '80%',
+    marginBottom: 30,
   },
 
   agoraS: {
     fontSize: 18,
-    fontWeight: 'bold',
     textAlign: 'center',
     width: '80%',
     marginTop: 20,
-    marginBottom: 40,
+    marginBottom: 20,
   },
 
   cestaIcon: {
     width: 200,
     height: 200,
-    marginBottom: 30,
+    marginBottom: 20, // Ajuste para espaço mais uniforme
   },
 
-  // Botão PRÓXIMO (à direita)
   prximo: {
-    position: 'absolute',
-    bottom: 80,
-    right: 20,
     backgroundColor: '#3cb3f6',
-    paddingVertical: 15,
-    paddingHorizontal: 40,
+    paddingVertical: 20,
+    paddingHorizontal: 60, // Botão maior para chamar mais atenção
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
+    marginTop: 20,
   },
+
   prximoTexto: {
     fontSize: 18,
     color: '#fff',
@@ -90,10 +88,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  // Botão VOLTAR (à esquerda)
   voltar: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 50,
     left: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,
@@ -101,40 +98,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
   },
+
   voltarTexto: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
-  },
-
-  // Etapas de progresso
-  bola1: { left: 80, width: 30, height: 30, top: 96, position: 'absolute' },
-  bola2: { left: 180 },
-  bola3: { left: 280 },
-  lineView: { left: 150 },
-  lineViewLayout: {
-    height: 1,
-    width: 36,
-    borderTopWidth: 1,
-    borderColor: '#3cb3f6',
-    borderStyle: 'solid',
-    top: 111,
-    position: 'absolute',
-  },
-
-  text: {
-    left: 110,
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#ffffff',
-    top: 99,
-    textAlign: 'left',
-    position: 'absolute',
   },
 });
 

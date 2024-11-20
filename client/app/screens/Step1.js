@@ -14,7 +14,7 @@ const Step1 = () => {
         <Text style={styles.aponteACmera}>
           Aponte a câmera do seu celular para o{' '}
           <Text style={styles.codigoDeBarras}>código de barras</Text> do produto e ele será
-          adicionado automaticamente à cesta
+          adicionado automaticamente à cesta.
         </Text>
       </Text>
 
@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
 
   // Texto de instrução principal
   aponteACmeraContainer: {
+    fontSize: 18,
     textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
+    color: '#fffffff',
     width: '80%',
     marginBottom: 30,
   },
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
 
   prximo: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 50,
     right: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,
@@ -92,12 +92,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
   },
+
   prximoTexto: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
 
   voltar: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 50,
     left: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,
@@ -113,12 +114,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
   },
   voltarTexto: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',

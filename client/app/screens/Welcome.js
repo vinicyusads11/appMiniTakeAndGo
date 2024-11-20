@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
@@ -8,6 +8,10 @@ const Welcome = () => {
 
   return (
     <View style={styles.welcome}>
+      <TouchableOpacity style={styles.skipButton} onPress={() => router.push('../(tabs)/home')}>
+        <Text style={styles.skipText}>Pular Tutorial</Text>
+      </TouchableOpacity>
+
       <Image
         style={styles.logotipoPreto}
         contentFit="cover"
@@ -19,11 +23,10 @@ const Welcome = () => {
         Siga aqui com nosso passo a passo completo para a compra de seus produtos
       </Text>
 
-      <TouchableOpacity style={styles.skipButton} onPress={() => router.push('../(tabs)/home')}>
-        <Text style={styles.skipText}>Pular Tutorial</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.prximo} onPress={() => router.push('../screens/Step1')}>
+      <TouchableOpacity
+        style={styles.prximo}
+        onPress={() => router.push('../screens/Step1')}
+      >
         <Text style={styles.prximoTexto}>PRÓXIMO</Text>
       </TouchableOpacity>
     </View>
@@ -31,7 +34,6 @@ const Welcome = () => {
 };
 
 const styles = StyleSheet.create({
-  // Contêiner da tela
   welcome: {
     backgroundColor: '#fff',
     flex: 1,
@@ -47,23 +49,21 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  // Texto principal "Bem-vindo à MINI"
   bemVindoAMini: {
     fontSize: 28,
     fontWeight: 'bold',
     color: '#3cb3f6',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
 
-  // Subtítulo "Sua nova forma de fazer compras"
   suaNovaForma: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
-    marginBottom: 15,
+    marginBottom: 30,
+    color: '#666',
   },
 
-  // Texto do tutorial
   sigaAquiCom: {
     fontSize: 18,
     color: '#3cb3f6',
@@ -84,10 +84,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  // Botão PRÓXIMO
   prximo: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 50,
     right: 20,
     backgroundColor: '#3cb3f6',
     paddingVertical: 15,
@@ -95,13 +94,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
     elevation: 5,
   },
 
   prximoTexto: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
