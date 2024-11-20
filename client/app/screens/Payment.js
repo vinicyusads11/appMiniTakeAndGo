@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, ActivityIndicator, Modal } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { faPix } from '@fortawesome/free-brands-svg-icons';
 import * as Clipboard from 'expo-clipboard';
 
@@ -10,10 +10,10 @@ export default function Payment() {
   const router = useRouter();
   const { qrCode, pixCode, total, cartItems, id } = useLocalSearchParams();
   const [checkingPayment, setCheckingPayment] = useState(false);
+  const [showApprovedPopup, setShowApprovedPopup] = useState(false); // Estado para o popup
 
   const copyToClipboard = () => {
     Clipboard.setStringAsync(pixCode);
-    Alert.alert('Código Pix Copiado!', 'Você pode colar no aplicativo do banco para realizar o pagamento.');
     setCheckingPayment(true); // Começa a verificar o pagamento
   };
 
@@ -25,13 +25,20 @@ export default function Payment() {
 
       if (data.status === 'approved') {
         setCheckingPayment(false);
-        router.push({
-          pathname: '/screens/PurchaseSummary',
-          params: {
-            cartItems, // Passa os itens do carrinho diretamente
-            total, // Passa o total para a próxima tela
-          },
-        });
+        setShowApprovedPopup(true); // Mostra o popup
+        setTimeout(() => {
+          setShowApprovedPopup(false);
+          router.push({
+            pathname: '/screens/PurchaseSummary',
+            params: {
+              cartItems, // Passa os itens do carrinho diretamente
+              total,
+              transactionId: id, // ID da transação
+              paymentDate: data.date_approved, // Data da transação
+              paymentMethod: data.payment_method_id, // Forma de pagamento
+            },
+          });
+        }, 2000); // 2 segundos de exibição do popup
       } else if (data.status === 'pending') {
         setTimeout(checkPaymentStatus, 5000); // Verifica novamente após 5 segundos
       } else {
@@ -65,6 +72,16 @@ export default function Payment() {
 
   return (
     <View style={styles.container}>
+      {/* Popup de pagamento aprovado */}
+      <Modal visible={showApprovedPopup} transparent={true} animationType="fade">
+        <View style={styles.popupContainer}>
+          <View style={styles.popupContent}>
+            <FontAwesomeIcon icon={faCheckCircle} size={50} color="#4CAF50" />
+            <Text style={styles.popupText}>Pagamento Aprovado!</Text>
+          </View>
+        </View>
+      </Modal>
+
       <View style={styles.content}>
         <Text style={styles.header}>Pagamento</Text>
 
@@ -260,5 +277,29 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginRight: 8,
+  },
+  popupContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  popupContent: {
+    width: 300,
+    padding: 20,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  popupText: {
+    marginTop: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#4CAF50',
   },
 });
