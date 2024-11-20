@@ -64,7 +64,7 @@ export default function Basket() {
         params: {
           qrCode: paymentData.point_of_interaction.transaction_data.qr_code_base64,
           pixCode: paymentData.point_of_interaction.transaction_data.qr_code,
-          id: paymentData.id, 
+          id: paymentData.id,
           total,
           cartItems: JSON.stringify(cartItems),
         },
@@ -155,12 +155,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F9FA',
   },
   header: {
-    fontSize: 28,
+    fontSize: 35,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',
     color: '#333',
-    backgroundColor: '#C5E3F3',
     padding: 10,
     borderRadius: 8,
   },
@@ -213,7 +212,7 @@ const styles = StyleSheet.create({
   },
   paymentContainer: {
     marginTop: 30,
-    flexDirection: 'row', 
+    flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 14,
     backgroundColor: '#FFF',
@@ -297,7 +296,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   confirmButton: {
-    backgroundColor: '#0D6EFD',
+    backgroundColor: '#3cb3f6',
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -342,4 +341,3 @@ const styles = StyleSheet.create({
     marginTop: 270,
   },
 });
-

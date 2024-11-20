@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, ActivityIndicator, Modal } from 'react-native';
+import { View,Text,StyleSheet,TouchableOpacity,Image,Alert,ActivityIndicator,Modal } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCheckCircle, faCopy } from '@fortawesome/free-solid-svg-icons';
@@ -96,17 +96,15 @@ export default function Payment() {
         </View>
 
         {qrCode ? (
-          <Image
-            source={{ uri: `data:image/png;base64,${qrCode}` }}
-            style={styles.qrCode}
-          />
+          <Image source={{ uri: `data:image/png;base64,${qrCode}` }} style={styles.qrCode} />
         ) : (
           <Text style={styles.errorMessage}>QR Code não disponível.</Text>
         )}
 
         <Text style={styles.instructions}>
           <Text style={styles.instructionsTitle}>Instruções: </Text>
-          Para finalizar a compra, leia o QRCODE acima ou copie e cole o código abaixo no seu aplicativo de pagamento de sua preferência.
+          Para finalizar a compra, leia o QRCODE acima ou copie e cole o código abaixo no seu
+          aplicativo de pagamento de sua preferência.
         </Text>
 
         {pixCode ? (
@@ -132,7 +130,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#F8F9FA', 
+    backgroundColor: '#F8F9FA',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -142,19 +140,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    fontSize: 40,
+    fontSize: 50,
     fontWeight: 'bold',
-    marginBottom: 15,
+    marginBottom: 20,
     textAlign: 'center',
-    color: '#343A40', 
-    backgroundColor: '#C5E3F3', 
     padding: 10,
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 5,
   },
   totalContainer: {
     flexDirection: 'row',
@@ -175,7 +165,7 @@ const styles = StyleSheet.create({
     color: '#495057',
   },
   totalAmount: {
-    fontSize: 22, 
+    fontSize: 22,
     color: '#4CAF50',
     fontWeight: 'bold',
     marginLeft: 5,
@@ -200,10 +190,10 @@ const styles = StyleSheet.create({
   pixHeader: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#4DB6AC', 
+    color: '#4DB6AC',
   },
   qrCode: {
-    width: 250, 
+    width: 250,
     height: 250,
     marginBottom: 20,
     borderRadius: 8,
@@ -216,15 +206,14 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   instructions: {
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
     marginBottom: 20,
-    color: '#495057',
-    lineHeight: 22, 
+    lineHeight: 22,
   },
   instructionsTitle: {
-    color: '#DC3545', 
-    fontSize: 18,
+    color: '#DC3545',
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5,
   },
@@ -244,7 +233,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#495057',
   },
   pixCode: {
     fontSize: 14,
@@ -259,7 +247,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E9ECEF',
   },
   copyButton: {
-    backgroundColor: '#3CB3F6', 
+    backgroundColor: '#3CB3F6',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 8,
