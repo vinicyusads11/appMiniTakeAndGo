@@ -27,10 +27,10 @@ const Contact = () => {
         source={require('../../assets/logopretosemfundo.png')}
       />
 
-      <Text style={styles.algumProblemaOu}>Algum problema ou dúvida?</Text>
+      <Text style={styles.algumProblemaOu}>Surgiu algum problema ou dúvida?</Text>
 
       <Text style={styles.cliqueNoConeContainer}>
-        Clique no <Text style={styles.coneTypo}>ícone</Text> abaixo e entre em contato:
+        Clique no <Text style={styles.coneTypo}>ícone</Text> do WhatsApp abaixo e entre em contato conosco:
       </Text>
 
       <TouchableOpacity style={styles.whatsappContainer} onPress={openWhatsApp}>
@@ -70,26 +70,27 @@ const styles = StyleSheet.create({
   logotipoPretoSemFundo1: {
     width: 150,
     height: 215,
+    marginTop: -85,
+    marginBottom: 280,
   },
 
   algumProblemaOu: {
     fontSize: 30,
     fontWeight: '700',
-    color: '#2F4F4F', // cor equivalente a Color.colorDarkslategray
     textAlign: 'center',
-    marginVertical: 10,
+    marginVertical: 0,
+    marginTop: -200,
   },
 
   cliqueNoConeContainer: {
     fontSize: 20,
-    color: '#2F4F4F', // cor equivalente a Color.colorDarkslategray
     textAlign: 'center',
     paddingHorizontal: 20,
     marginVertical: 10,
     fontWeight: 'bold',
   },
   coneTypo: {
-    color: '#00BFFF', // cor equivalente a Color.colorDeepskyblue
+    color: '#00BFFF', 
     fontWeight: '700',
   },
 
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
   },
   phoneNumber: {
     fontSize: 20,
-    color: '#00BFFF', // cor equivalente a Color.colorDeepskyblue
+    color: '#00BFFF', 
     fontWeight: '600',
   },
 });
