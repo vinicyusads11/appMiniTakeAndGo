@@ -61,7 +61,7 @@ export default function Payment() {
   if (checkingPayment) {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Verificando status do pagamento...</Text>
+        <Text style={styles.header}>Verificando pagamento...</Text>
         <ActivityIndicator size="large" color="#4DB6AC" />
         <Text style={styles.instructions}>
           Assim que você fizer o pagamento, sua compra será aprovada em instantes!
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   instructionsTitle: {
-    color: '#DC3545',
+    color: '#FF0000',
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5,

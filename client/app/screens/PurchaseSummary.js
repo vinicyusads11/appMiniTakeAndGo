@@ -69,7 +69,7 @@ export default function PurchaseSummary() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>
-        🎉 Agora que seu pagamento foi aprovado, é só levar seus produtos para casa! 🛒
+        🎉 Pronto! Agora que seu pagamento foi aprovado, é só levar seus produtos para casa! 🛒
       </Text>
       <Text style={styles.subHeader}>
         Nesta tela, você pode visualizar os detalhes da compra, os produtos adquiridos e salvar o recibo da compra.
