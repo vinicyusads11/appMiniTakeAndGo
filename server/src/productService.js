@@ -2,7 +2,7 @@ import 'dotenv/config'; // Carrega as variáveis de ambiente do .env
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import Product from '../src/models/Product.js'; 
+import Product from './models/Product.js'; 
 
 const app = express();
 app.use(cors());
@@ -43,5 +43,5 @@ app.post('/product', async (req, res) => {
 // Iniciar o servidor
 const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor produtos rodando na porta ${PORT}`);
 });
