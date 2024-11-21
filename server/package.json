@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start:payment": "node src/paymentService.js",
+    "start:product": "node src/productService.js",
+    "start": "concurrently \"npm run start:payment\" \"npm run start:product\""
   },
   "keywords": [],
   "author": "",
@@ -21,5 +23,8 @@
     "mongoose": "^8.2.2",
     "pg": "^8.11.3",
     "sequelize": "^6.37.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
 }
