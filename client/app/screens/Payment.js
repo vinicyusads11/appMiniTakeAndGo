@@ -20,7 +20,7 @@ export default function Payment() {
   // Função para verificar o status do pagamento
   const checkPaymentStatus = async () => {
     try {
-      const response = await fetch(`http://192.168.1.2:3000/consultar-pagamento/${id}`);
+      const response = await fetch(`https://appminitakeandgo.onrender.com/consultar-pagamento/${id}`);
       const data = await response.json();
 
       if (data.status === 'approved') {

@@ -42,7 +42,7 @@ export default function Basket() {
 
   const handleConfirmPurchase = async () => {
     try {
-      const response = await fetch('http://192.168.1.2:3000/criar-pix', {
+      const response = await fetch('https://appminitakeandgo.onrender.com/criar-pix', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
