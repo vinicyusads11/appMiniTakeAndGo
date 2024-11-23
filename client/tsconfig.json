@@ -3,15 +3,52 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "app/screens/ScanBarCode.js",
+    "app/(tabs)/testetela.js",
+    "app/(tabs)/home.js",
+    "app/(tabs)/contact.js",
+    "guardados/basket.js",
+    "app/(tabs)/_layout.js",
+    "guardados/EmptyBasket.js",
+    "guardados/OrderCompleted.js",
+    "guardados/OrderInfo.js",
+    "app/screens/Payment.js",
+    "app/screens/Step1.js",
+    "app/screens/Step2.js",
+    "app/screens/Step3.js",
+    "app/screens/Welcome.js",
+    "app/index.js",
+    "components/Button1.js",
+    "components/CrossIcon.js",
+    "styles/BasketStyle.js",
+    "styles/ContactStyle.js",
+    "guardados/EmptyBasketStyle.js",
+    "styles/HomeStyle.js",
+    "guardados/OrderCompletedStyle.js",
+    "guardados/OrderInfoStyle.js",
+    "styles/PaymentStyle.js",
+    "styles/ScanBarCodeStyles.js",
+    "styles/Step1Style.js",
+    "styles/Step2Style.js",
+    "styles/Step3Style.js",
+    "styles/WelcomeStyle.js",
+    "guardados/BranchStep.js",
+    "guardados/BranchStepStyle.js",
+    "guardados/Login.js",
+    "guardados/LoginStyle.js",
+    "guardados/profile.js",
+    "guardados/ProfileStyle.js",
+    "guardados/Register.js",
+    "guardados/RegisterStyle.js",
+    "guardados/ScanBranch1.js",
+    "guardados/ScanBranch1Style.js"
   ]
 }

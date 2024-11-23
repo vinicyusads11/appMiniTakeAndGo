@@ -2,21 +2,29 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start:payment": "node src/paymentService.js",
+    "start:product": "node src/productService.js",
+    "start": "concurrently \"npm run start:payment\" \"npm run start:product\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.7",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mercadopago": "^2.0.15",
     "mongoose": "^8.2.2",
     "pg": "^8.11.3",
     "sequelize": "^6.37.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
 }
