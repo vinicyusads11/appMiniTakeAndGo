@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#272626"
-      }
+      },
+      "package": "com.guguetson.minitakeandgo"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,20 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "72b20e61-e1cb-4172-800a-e8ed85f9f2a0"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/72b20e61-e1cb-4172-800a-e8ed85f9f2a0"
     }
   }
 }
