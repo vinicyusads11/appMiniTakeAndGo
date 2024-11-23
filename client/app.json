@@ -1,17 +1,13 @@
 {
   "expo": {
     "name": "minitakeandgo",
-    "slug": "minitakeandgo",
+    "slug": "minitakeango",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#272626"
-    },
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -19,8 +15,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#272626"
-      },
-      "newArchEnabled": true
+      }
     },
     "web": {
       "bundler": "metro",
@@ -28,7 +23,16 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "imageWidth": 100,
+          "resizeMode": "contain",
+          "backgroundColor": "#272626"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
