@@ -33,7 +33,7 @@ const Step1 = () => {
       <Image
         style={styles.girlscanqrcodeIcon}
         contentFit="cover"
-        source={require('../../assets/girlscanqrcode.png')}
+        source={require('../../assets/cellscanbarcode.png')}
       />
     </View>
   );
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
 
   // Imagem de instrução principal
   girlscanqrcodeIcon: {
-    width: 350,
-    height: 180,
+    width: 200,
+    height: 185,
     marginBottom: 40,
   },
 
